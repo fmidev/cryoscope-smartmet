@@ -9,7 +9,7 @@ else
     yday=`date -d '2 days ago' +%Y%m%d`
     version=1.0.2
 fi
-incoming=~/data/copernicus
+incoming=~/data/swi1km
 mkdir -p $incoming
 year=`date -d $yday +%Y`
 month=`date -d $yday +%m`

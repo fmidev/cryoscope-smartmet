@@ -35,11 +35,12 @@ dam5=$(date -d "$date 5 days ago" +%Y%m%d)T000000
 
 cd /home/smartmet/data
 echo 'fetch 3h variables'
+#! [ -s grib/EDTE_${date}T000000_sfc-$abr.grib ] &&  \
+#  poly-edte-sfc.mars $date && \
+#  cdo -P 64 --eccodes -s -O aexprf,ec-sde.instr -remapnn,edte-$abr-grid edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
 ! [ -s grib/EDTE_${date}T000000_sfc-$abr.grib ] &&  \
  sed s:2023-10-10:$date:g ../mars/edte-sfc.mars | /home/smartmet/bin/mars && \
  cdo -P 64 --eccodes -s -O aexprf,ec-sde.instr edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
-# poly-edte-sfc.mars $date && \
-# cdo -P 64 --eccodes -s -O aexprf,ec-sde.instr -remapnn,edte-eu-grid edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
 echo 'disaccumulate 24h and shifttime' #,swi-edte-$abr-weights.nc
 ! [ -s ens/edte_${date}_disacc-$abr.grib ] && cdo -P 64 -s --eccodes -O shifttime,-1d \
  -deltat -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,skt -seltime,00:00:00 grib/EDTE_${date}T000000_sfc-$abr.grib ens/edte_${date}_disacc-$abr.grib \
@@ -47,7 +48,7 @@ echo 'disaccumulate 24h and shifttime' #,swi-edte-$abr-weights.nc
 
 echo 'fetch fg/24h variables'
 ! [ -s grib/EDTE_${date}T000000_fg-$abr.grib ] && sed s:2023-10-10:$date:g ../mars/edte-fg.mars | /home/smartmet/bin/mars && \
- mv edte_${date}_fg-$abr.grib grib/EDTE_${date}T000000_fg-$abr.grib || echo "EDTE fg Data already downloaded"
+ cdo copy edte_${date}_fg-$abr.grib grib/EDTE_${date}T000000_fg-$abr.grib || echo "EDTE fg Data already downloaded"
 echo 'calculate/remap runsums' #,swi-edte-$abr-weights.nc
 ! [ -s ens/edte_${date}_runsums-$abr.grib ] && cdo -P 64 --eccodes -S --timestat_date last \
  seldate,$sdate,$edate -runsum,15 -mergetime \
@@ -72,8 +73,7 @@ echo 'remap stl2'
 [ -s ens/edte_${date}_stl2-$abr.grib ] && echo "EDTE sl00 Data already calculated" || \
  cdo -P 64 -s --eccodes seldate,$sdate,$edate -selname,stl2 -seltime,00:00:00 grib/EDTE_${date}T000000_sfc-$abr.grib \
  ens/edte_${date}_stl2-$abr.grib &
-
-
+# static data for bias correction ML inference
 echo 'shift climate dates'
 y=$(date -d $date +%Y)
 yd=$(echo "$y - 2020" | bc)
@@ -87,8 +87,8 @@ yd=$(echo "$y - 2020" | bc)
  cdo -P 64 -s --eccodes -seldate,$sdate,$edate -shifttime,${yd}year grib/LSASAFC_20000101T000000_ydmean_nights-eu-de.grib ens/LSASAFC_${date}_sktn.grib &
 [ -s ens/edte_${date}_AMSRC_skt.grib ] && echo "EDTE AMSRC skt 00 UTC data already chopped" || \
  cdo -P 64 -s --eccodes -seldate,$sdate,$edate -shifttime,${yd}year grib/AMSRC_20000101T000000_2013-2023_daymean-skt-edte-eu.grib ens/edte_${date}_AMSRC_skt.grib &
-[ -s ens/CLMSC_${date}_clmsc.grib ] && echo "EDTE CLMSC Data already chopped" || \
-cdo -P 64 -s --eccodes -seldate,$sdate,$edate -shifttime,${yd}year grib/CLMSC_20000101T000000_2006-23_swe-edte.grib ens/CLMSC_${date}clmsc.grib &
+[ -s ens/CLMSC_${date}_swe.grib ] && echo "EDTE CLMSC Data already chopped" || \
+cdo -P 64 -s --eccodes -seldate,$sdate,$edate -shifttime,${yd}year grib/CLMSC_20000101T000000_2006-23_swe-edte.grib ens/CLMSC_${date}_swe.grib &
 
 wait
 echo 'start xgb predict soil wetness'
@@ -100,8 +100,8 @@ $python /home/ubuntu/bin/xgb-predict-swi2-edte.py ens/edte_${date}_swvls-$abr.gr
  ens/SWIC_${date}T000000_swi-day.grib \
  ens/EDTE_${date}_swi2_out.nc
 
-echo 'netcdf to grib'
-# netcdf to grib
+echo 'netcdf to grib for swi2'
+# netcdf to grib for swi2
 [ -s ens/EDTE_${date}_swi2_out.grib ] && echo "EDTE swi2 Data already reformatted" || \
  cdo -P 64 -s -b P16 -f grb2 copy -setparam,41.228.192 -setmissval,-9.e38 ens/EDTE_${date}_swi2_out.nc \
  ens/EDTE_${date}_swi2_out.grib 
@@ -117,7 +117,7 @@ echo 'start xgb predict soil temp'
 $python /home/ubuntu/bin/xgb-predict-soiltemp-edte.py ens/edte_${date}_swvls-$abr.grib \
   ens/edte_${date}_sl00-$abr.grib ens/edte_${date}_disacc-$abr.grib ens/LSASAFC_${date}_sktn.grib ens/ECC_${date}T000000_laihv-$abr-edte-day.grib \
   ens/ECC_${date}T000000_lailv-$abr-edte-day.grib ens/edte_${date}_stl2-$abr.grib ens/edte_${date}_AMSRC_skt.grib ens/EDTE_${date}_stl1_out.nc  
-echo 'netcdf to grib'
+echo 'netcdf to grib for stl1'
 # netcdf to grib
 [ -s ens/EDTE_${date}_stl1_out.grib ] && echo "EDTE stl1 Data already reformatted" || \
 cdo -P 64 -b P16 -f grb2 copy -setparam,139.174.192 -setmissval,-9.e38 ens/EDTE_${date}_stl1_out.nc \
@@ -132,15 +132,15 @@ echo 'start xgb predict snow depth'
 [ -s ens/EDTE_${date}_sd_out.nc ] && echo "EDTE sd Data already calculated" || \
 $python /home/ubuntu/bin/xgb-predict-snowdepth-edte.py ens/edte_${date}_swvls-$abr.grib \
   ens/edte_${date}_sl00-$abr.grib ens/edte_${date}_disacc-$abr.grib ens/ECC_${date}T000000_laihv-$abr-edte-day.grib \
-  ens/ECC_${date}T000000_lailv-$abr-edte-day.grib ens/CLMSC_${date}clmsc.grib ens/EDTE_${date}_sd_out.nc 
-echo 'netcdf to grib'
+  ens/ECC_${date}T000000_lailv-$abr-edte-day.grib ens/CLMSC_${date}_swe.grib ens/EDTE_${date}_sd_out.nc 
+echo 'netcdf to grib for sd'
 # netcdf to grib
 [ -s ens/EDTE_${date}_sd_out.grib ] && echo "EDTE sd Data already reformatted" || \
-cdo -P 64 -b P16 -f grb2 copy -setparam,11.1.0 -setmissval,-9.e38 ens/EDTE_${date}_sd_out.nc \
+cdo -P 64 -b 16 -f grb2 setparam,11.1.0 -setmissval,-9.e38 ens/EDTE_${date}_sd_out.nc \
  ens/EDTE_${date}_sd_out.grib #|| echo "NO input or already netcdf to grib1"
 echo 'grib fix'
 # fix grib attributes
-[ -s grib/EDTE_${date}T000000_sd-$abr.grib ] && echo "EDTE sd Data already fixed" || \
+[ -s grib/EDTE_${date}T000000_hsnow-$abr.grib ] && echo "EDTE sd Data already fixed" || \
 grib_set -r -s centre=86,jScansPositively=1,typeOfFirstFixedSurface=1 ens/EDTE_${date}_sd_out.grib grib/EDTE_${date}T000000_hsnow-$abr.grib
 
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
