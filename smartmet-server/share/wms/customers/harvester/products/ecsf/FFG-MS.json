@@ -1,6 +1,6 @@
 {
-    "title": "ECSF 10 Metre Windgust Isobands (ms-1)",
-    "abstract": "C3S ECMWF SEAS5 Seasonal forecast FFG-MS 10 metre windgust (ms-1).",
+    "title": "ECSF 10 Metre Windgust Isobands in m/s",
+    "abstract": "C3S ECMWF SEAS5 Seasonal forecast FFG-MS 10 metre windgust in m/s.",
     "projection": {},
     "producer": "ECSF",
     "source": "grid",

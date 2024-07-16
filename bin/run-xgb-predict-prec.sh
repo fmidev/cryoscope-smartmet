@@ -7,7 +7,7 @@ source ~/.smart
 eval "$(conda shell.bash hook)"
 
 conda activate xgb
-
+TMPDIR=/home/smartmet/data/tmp
 year=$1
 month=$2
 

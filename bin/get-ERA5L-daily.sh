@@ -31,18 +31,18 @@ fi
 source ~/.smart 
 cd /home/smartmet/data
 echo "fetch ERA5 for y: $year m: $month d: $day"
-[ -f ERA5L_$year$month${day}T000000_sfc-1h.grib ] || ../bin/cds-era5l.py $year $month $day $abr $area
+[ -f grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib ] || ../bin/cds-era5l.py $year $month $day $abr $area
 conda activate cdo
 # accumulated at 00UTC
 cdo -b P8 -O --eccodes shifttime,-1day -selhour,0 -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf ERA5L_${ymond1}T000000_sfc-1h.grib ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib
-# daily means for instantaneous
+# daily means for instantaneousL_20000101T000000_
 cdo -b P8 -O --eccodes daymean -selname,10u,10v,2d,2t,lai_hv,lai_lv,src,skt,asn,rsn,sd,stl1,stl2,stl3,stl4,sp,tsn,swvl1,swvl2,swvl3,swvl4 ERA5L_${ymond1}T000000_sfc-1h.grib ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib
 
 # append to monthly files - with parallel run use -j1 
 if [ $yday -eq 01 ]
 then
     mv ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib grib/ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib
-    mv ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib grib/ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib
+    mv ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib grib/ERA5LD_20000101T000000_${ymond2}T000000_dailymeans.grib
 else
     export SKIP_SAME_TIME=1
     cdo -b P8 -O --eccodes mergetime grib/ERA5LD_20000101T000000_${yyear}${ymonth}01T000000_accumulated.grib ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib out1-$ymond1.grib && \
@@ -54,6 +54,6 @@ else
 fi
 
 # daily hourly data
-mv ERA5L_$year$month${day}T000000_sfc-1h.grib grib/ERA5L_20000101T000000_${ymond1}T000000_base+soil.grib
+mv ERA5L_${ymond1}T000000_sfc-1h.grib grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib
 cdo -f grb2 --eccodes setparam,11.1.0 -selname,sde -aexprf,ec-sde.instr grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib grib/ERA5L_20000101T000000_$year$month${day}T000000_sde.grib
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0

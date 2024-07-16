@@ -1,6 +1,6 @@
 {
-    "title" : "ECBSF Wind Speed",
-    "abstract" : "C3S seasonal forecast data from ECMWF.",
+    "title" : "ECBSF Wind Speed in m/s",
+    "abstract" : "Wind speed in m/s from ECBSF (C3S seasonal forecast data from ECMWF).",
     "projection": {},
     "producer": "ECBSF",
     "source":"grid",
