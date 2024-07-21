@@ -113,3 +113,4 @@
 10000198;SRC-M;m of water eq;Skin reservoir content (m of water eq);1;1;1;4;
 10229001;CUR-0TO1;0to1;Urban cover fraction (0-1);1;1;1;4;
 10500007;HSURF-M;m;Earth surface height (m);1;1;1;1;
+10000078;TCLW-KGM2;kg m-2;Total column cloud liquid water;1;1;1;1;

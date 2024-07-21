@@ -192,3 +192,5 @@ Q-KGKG;133;;;
 SFT-N;171043;;;
 # 500007:Geometric height of earth surface (m)
 HSURF-M;500007;;;
+# 78:Total column cloud liquid water (kg m-2)
+TCLW-KGM2;78;;;
