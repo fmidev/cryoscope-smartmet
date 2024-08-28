@@ -1,0 +1,12 @@
+bbox='24.15695,64.91589,24.65695,64.41589'
+harbor='Raahe'
+FMISID='101785'
+lat=64.66589
+lon=24.40695
+predictand='WG_PT1H_MAX'
+mdl_name='mdl_WGPT1MAX_2013-2023_sf_Raahe.txt'
+predictors00='10u,10v,2d,2t,10fg'
+predictorsDSUM='ewss,nsss,slhf,sshf,ssrd,strd,tp'
+#cols_own=['ewss-1','ewss-2','ewss-3','ewss-4','fg10-1','fg10-2','fg10-3','fg10-4','nsss-1','nsss-2','nsss-3','nsss-4','slhf-1','slhf-2','slhf-3','slhf-4','sshf-1','sshf-2','sshf-3','sshf-4','ssr-1','ssr-2','ssr-3','ssr-4','ssrd-1','ssrd-2','ssrd-3','ssrd-4','strd-1','strd-2','strd-3','strd-4','t2-1','t2-2','t2-3','t2-4','td2-1','td2-2','td2-3','td2-4','tp-1','tp-2','tp-3','tp-4','u10-1','u10-2','u10-3','u10-4','v10-1','v10-2','v10-3','v10-4']
+#pred00=['lat','lon','u10','v10','fg10','td2','t2']
+#predDSUM=['lat','lon','ewss','nsss','slhf','ssr','sshf','ssrd','strd','tp']

@@ -90,15 +90,15 @@ grib_set -s levelType=106,level:d=3,topLevel:d=1.0,bottomLevel:d=2.54 ens/ec-sf_
     ens/ec-${bsf}_$year${month}_bound-24h-$abr-{}.grib || echo "NOT adj wind - seasonal forecast input missing or already produced"
 ### adjust evaporation and total precip or other accumulating variables
 ### due to a clearly too strong variance term in tp adjustment is only done with bias for now
-### disacc tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr
+### disacc tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr,ewss,nsss
 [ -s ens/ec-sf_$year${month}_all-24h-$abr-50.grib ] && ! [ -s ens/ec-${bsf}_$year${month}_acc-24h-$abr-50.grib ] && \
- seq 0 50 | parallel "cdo -s --eccodes -O mergetime -seltimestep,1 -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr ens/ec-sf_$year${month}_all-24h-$abr-{}.grib \
-     -deltat -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr ens/ec-sf_$year${month}_all-24h-$abr-{}.grib ens/disacc-$year${month}-{}.grib && \
-    cdo -s --eccodes ymonmul -remap,$era-$abr-grid,ec-sf-$era-$abr-weights.nc -selname,e,tp ens/disacc-$year${month}-{}.grib \
+ seq 0 50 | parallel "cdo -s --eccodes -O mergetime -seltimestep,1 -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr,ewss,nsss ens/ec-sf_$year${month}_all-24h-$abr-{}.grib \
+     -deltat -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr,ewss,nsss ens/ec-sf_$year${month}_all-24h-$abr-{}.grib ens/disacc_$year${month}_{}.grib && \
+    cdo -s --eccodes ymonmul -remap,$era-$abr-grid,ec-sf-$era-$abr-weights.nc -selname,e,tp ens/disacc_$year${month}_{}.grib \
      -selname,e,tp $era/$era-ecsf_2000-2019_bound_bias_$abr.grib \
      ens/ec-${bsf}_$year${month}_disacc-24h-$abr-{}.grib && \
     cdo -s --eccodes -b P8 timcumsum ens/ec-${bsf}_$year${month}_disacc-24h-$abr-{}.grib ens/ec-${bsf}_$year${month}_acc-24h-$abr-{}.grib" || echo "NOT adj acc - seasonal forecast input missing or already produced"
-
+echo 'stop'
 ## Make stl2,3,4 from stl1
 [ -s ens/ec-sf_$year${month}_all-24h-$abr-50.grib ] && ! [ -s ens/ec-${bsf}_$year${month}_stl-24h-$abr-50.grib ] && \
  seq 0 50 |parallel -q cdo -s --eccodes -O -b P8 ymonadd -aexpr,'stl2=stl1;stl3=stl1;stl4=stl1;' -remap,$era-$abr-grid,ec-sf-$era-$abr-weights.nc -selname,stl1 ens/ec-sf_$year${month}_all-24h-$abr-{}.grib \

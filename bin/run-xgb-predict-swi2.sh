@@ -29,21 +29,21 @@ seq 0 50 | parallel --compress grib_copy -w shortName=2t/2d/stl1/rsn/sde ens/ec-
 #cdo -b P12 -O --eccodes merge -selname,2d,2t,stl1 ens/ec-BSF_${year}${month}_unbound-24h-eu-{}.grib -selname,rsn,sde ens/ec-BSF_${year}${month}_snow-24h-eu-{}.grib 
 
 echo 'remap accumulated'
-# tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf ens/disacc-${year}${month}-50.grib remapped to era5l
-[ -s ens/disacc-${year}${month}-50.grib ] && ! [ -s ens/disacc_${grid}_${year}${month}-50.grib ] && \
+# tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf ens/disacc_${year}${month}_50.grib remapped to era5l
+[ -s ens/disacc_${year}${month}_50.grib ] && ! [ -s ens/disacc_${grid}_${year}${month}_50.grib ] && \
  seq 0 50 | parallel --compress cdo -b P12 -O --eccodes remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -shifttime,1day \
- -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf ens/disacc-${year}${month}-{}.grib ens/disacc_${grid}_${year}${month}-{}.grib \
+ -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf ens/disacc_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}.grib \
 || echo 'not remappig disacc - already done or no input files'
-! [ -s ens/disacc-${year}${month}-50-fixed.grib ] && \
- seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/disacc_${grid}_${year}${month}-{}.grib ens/disacc_${grid}_${year}${month}-{}-fixed.grib \
+! [ -s ens/disacc_${year}${month}_50-fixed.grib ] && \
+ seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/disacc_${grid}_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}-fixed.grib \
 
 echo 'runsums'
 # rolling cumsums cdo 
-[ -s ens/disacc_${grid}_${year}${month}-50.grib ] && ! [ -s ens/ec-sf_runsums_${grid}_${year}${month}-50.grib ] && \
- seq 0 50 | parallel --compress cdo -b P12 -O --eccodes runsum,15 -selname,e,tp,ro ens/disacc_${grid}_${year}${month}-{}.grib ens/ec-sf_runsums_${grid}_${year}${month}-{}.grib \
+[ -s ens/disacc_${grid}_${year}${month}_50.grib ] && ! [ -s ens/ec-sf_runsums_${grid}_${year}${month}_50.grib ] && \
+ seq 0 50 | parallel --compress cdo -b P12 -O --eccodes runsum,15 -selname,e,tp,ro ens/disacc_${grid}_${year}${month}_{}.grib ens/ec-sf_runsums_${grid}_${year}${month}_{}.grib \
  || echo 'not doing runsums - already done or no input files'
-! [ -s ens/ec-sf_runsums_${grid}_${year}${month}-50-fixed.grib ] && \
- seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/ec-sf_runsums_${grid}_${year}${month}-{}.grib ens/ec-sf_runsums_${grid}_${year}${month}-{}-fixed.grib 
+! [ -s ens/ec-sf_runsums_${grid}_${year}${month}_50-fixed.grib ] && \
+ seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/ec-sf_runsums_${grid}_${year}${month}_{}.grib ens/ec-sf_runsums_${grid}_${year}${month}_{}-fixed.grib 
 
 # laihv lailv
 ! [ -s ens/ECC_${year}${month}01T000000_laihv-eu-day.grib ] && ! [ -s ens/ECC_${year}${month}01T000000_lailv-eu-day.grib ] && \
@@ -53,7 +53,7 @@ echo 'runsums'
     cdo -shifttime,${diff}years grib/SWIC_20000101T000000_2020_2015-2022_swis-ydaymean-eu-9km-fixed.grib ens/SWIC_${year}${month}01T000000_2020_2015-2022_swis-ydaymean-eu-9km-fixed.grib || echo 'not shifting'
 
 echo 'start xgb predict'
-seq 0 50 | parallel --compress -j3  python /home/ubuntu/bin/xgb-predict-swi2-${grid}.py ens/ec-BSF_${year}${month}_swvls-24h-eu-{}-fixed.grib ens/ec-sf_${grid}_${year}${month}_sl00utc-24h-eu-{}.grib ens/ec-sf_runsums_${grid}_${year}${month}-{}-fixed.grib ens/disacc_${grid}_${year}${month}-{}-fixed.grib ens/ECC_${year}${month}01T000000_laihv-eu-day.grib ens/ECC_${year}${month}01T000000_lailv-eu-day.grib ens/SWIC_${year}${month}01T000000_2020_2015-2022_swis-ydaymean-eu-9km-fixed.grib ens/ECXSF_${year}${month}_swi2_${grid}_out-{}.nc
+seq 0 50 | parallel --compress -j3  python /home/ubuntu/bin/xgb-predict-swi2-${grid}.py ens/ec-BSF_${year}${month}_swvls-24h-eu-{}-fixed.grib ens/ec-sf_${grid}_${year}${month}_sl00utc-24h-eu-{}.grib ens/ec-sf_runsums_${grid}_${year}${month}_{}-fixed.grib ens/disacc_${grid}_${year}${month}_{}-fixed.grib ens/ECC_${year}${month}01T000000_laihv-eu-day.grib ens/ECC_${year}${month}01T000000_lailv-eu-day.grib ens/SWIC_${year}${month}01T000000_2020_2015-2022_swis-ydaymean-eu-9km-fixed.grib ens/ECXSF_${year}${month}_swi2_${grid}_out-{}.nc
 
 echo 'netcdf to grib'
 # netcdf to grib

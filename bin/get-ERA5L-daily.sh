@@ -30,7 +30,7 @@ fi
 
 source ~/.smart 
 cd /home/smartmet/data
-echo "fetch ERA5 for y: $year m: $month d: $day"
+echo "fetch ERA5-L for y: $year m: $month d: $day"
 [ -f grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib ] || ../bin/cds-era5l.py $year $month $day $abr $area
 conda activate cdo
 # accumulated at 00UTC
