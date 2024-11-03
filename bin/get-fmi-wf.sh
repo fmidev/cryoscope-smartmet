@@ -62,3 +62,5 @@ else
 fi
 mv fmi-smartmet-* smartmet/
 sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+
+echo "Done"

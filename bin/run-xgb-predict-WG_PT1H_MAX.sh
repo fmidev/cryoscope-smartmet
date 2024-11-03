@@ -6,7 +6,9 @@
 
 source ~/.smart
 #source Vuosaari_151028_XGBoost.py
-source Raahe_101785_XGBoost.py
+#source Raahe_101785_XGBoost.py
+source Rauma_101061_XGBoost.py
+
 eval "$(conda shell.bash hook)"
 
 conda activate xgb

@@ -2,7 +2,10 @@ import xarray as xr
 import cfgrib,time,sys
 import pandas as pd
 import xgboost as xgb
-from Vuosaari_151028_XGBoost import *
+#from Vuosaari_151028_XGBoost import *
+#from Raahe_101785_XGBoost import *
+from Rauma_101061_XGBoost import *
+
 #startTime=time.time()
 
 def filter_points(df,lat,lon,nro,names):

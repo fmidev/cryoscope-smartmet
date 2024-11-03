@@ -143,4 +143,6 @@ echo 'grib fix'
 [ -s grib/EDTE_${date}T000000_hsnow-$abr.grib ] && echo "EDTE sd Data already fixed" || \
 grib_set -r -s centre=86,jScansPositively=1,typeOfFirstFixedSurface=1 ens/EDTE_${date}_sd_out.grib grib/EDTE_${date}T000000_hsnow-$abr.grib
 
+#s3cmd -Pq put edte_20240[789]* s3://destine/edte/
+
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0

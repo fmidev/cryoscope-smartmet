@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import cdsapi
 import sys
 # CMIP6 monthly 1995-2014 (historical) Europe
@@ -5,7 +6,8 @@ import sys
 mod=sys.argv[1]
 var=sys.argv[2]
 
-print('/home/smartmet/data/cmip6/%s_%s_1995-2014_CMIP6_monthly_euro.zip'%(mod,var))
+target='/home/ubuntu/data/cmip6/%s_%s_1995-2014_CMIP6_monthly_euro.zip'%(mod,var)
+print(target)
 
 c = cdsapi.Client()
 
@@ -24,5 +26,5 @@ c.retrieve(
             50,
         ],
     },
-    '/home/smartmet/data/cmip6/%s_%s_1995-2014_CMIP6_monthly_euro.zip'%(mod,var))
+    dataset)
 

@@ -56,3 +56,5 @@ else
     mv $file ../grib/CLMS_20000101T000000_${file:12:8}T${file:20:4}00_swis.grib
 fi
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+
+echo "Done"

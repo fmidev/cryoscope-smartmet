@@ -176,7 +176,7 @@ seq 0 50 | parallel -q cdo --eccodes -O -b P12 \
         -aexpr,'vp=clev(q)*q/(0.622+0.378*q);' ens/ec-sf_$year${month}_pl-12h-$abr-{}.grib ens/ec-sf_$year${month}_pl-pp-12h-$abr-{}.grib || \
  echo "NOT adding kx to ECSF pressure level - no input or already produced"
 
-echo "start XGBoost predict for precipitation" # tmp echo 
+echo "start XGBoost predict for precipitation"
 run-xgb-predict-prec.sh $year $month
 
 [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50.grib ] && ! [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50-fixed.grib ] && \

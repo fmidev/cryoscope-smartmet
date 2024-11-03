@@ -24,3 +24,5 @@ conda activate cdo
 cdo -f grb2 --eccodes selname,sde -exprf,ec-sde.instr ERA5_$year$month${day}T000000_base+soil.grib grib/ERA5_20000101T000000_$year$month${day}T000000_sde.grib
 mv ERA5_$year$month${day}T000000_base+soil.grib grib/ERA5_20000101T000000_$year$month${day}T000000_base+soil.grib
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+
+echo "Done"

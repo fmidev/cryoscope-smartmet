@@ -97,3 +97,4 @@ echo "Data is from $start to $end"
 #  && rm sen3/S3SY_${start:0:4}0101T000000_${end}T000000_[BMN]*.grib
 
 ##sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+echo 'Done'

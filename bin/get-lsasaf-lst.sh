@@ -28,3 +28,4 @@ wget -c --no-check-certificate -r -np -nd -q -A '*.nc' https://datalsasaf.lsasvc
     rm NETCDF4_LSASAF_M01-AVHR_EDLST-*_GLOBE_${ymd}0000.nc
 
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+echo "Done"

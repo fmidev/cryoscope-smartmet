@@ -33,3 +33,4 @@ wget -c --no-check-certificate -q https://litdb.fmi.fi/outgoing/SMOS-FTService/O
   rm W_XX-ESA,SMOS,NH_25KM_EASE2_${ymd}_${or}_01_l3soilft.nc || echo "download or processing failed"
 
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+echo "Done"

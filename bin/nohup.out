@@ -1,0 +1,1136 @@
+fetch 3h variables
+EDTE sfc Data already downloaded
+disaccumulate 24h and shifttime
+EDTE sfc Data already disaccumulated
+fetch fg/24h variables
+fetch 3h variables
+2024-09-10 12:45:13 ECMWF API python library 1.6.3
+2024-09-10 12:45:13 ECMWF API at https://api.ecmwf.int/v1
+2024-09-10 12:45:13 Welcome Mikko Strahlendorff
+2024-09-10 12:45:14 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-10 12:45:15 Request submitted
+2024-09-10 12:45:15 Request id: 66e03f5a3b32f0067d127513
+2024-09-10 12:45:15 Request is submitted
+2024-09-10 12:45:16 Request is active
+2024-09-10 12:45:32 Calling 'nice mars /tmp/20240910-1240/eb/tmp-_mars-CFz2Wn.req'
+2024-09-10 12:45:32 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 12:45:32 mars - WARN -
+2024-09-10 12:45:32 mars - WARN -
+2024-09-10 12:45:32 MIR environment variables:
+2024-09-10 12:45:32 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 12:45:32 MIR_LSM_NAMED=1km.climate.v013
+2024-09-10 12:45:32 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Welcome to MARS
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - MARS Client build stamp: 20240618101041
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - MARS Client bundle version: 6.33.19.4
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package mars-client version: 6.33.19
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package mir version: 1.21.0
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package odc version: 1.5.0
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package fdb version: 5.12.1
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package metkit version: 1.11.12
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package eckit version: 1.26.2
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - package eccodes version: 2.35.3
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Maximum retrieval size is 75.00 G
+2024-09-10 12:45:32 retrieve,domain=g,target="edte_20240820_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240820,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240910.124516 - Automatic split on dates is on
+2024-09-10 12:45:32 
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Processing request 1
+2024-09-10 12:45:32 
+2024-09-10 12:45:32 RETRIEVE,
+2024-09-10 12:45:32     CLASS      = RD,
+2024-09-10 12:45:32     TYPE       = FC,
+2024-09-10 12:45:32     STREAM     = OPER,
+2024-09-10 12:45:32     EXPVER     = i4ql,
+2024-09-10 12:45:32     REPRES     = SH,
+2024-09-10 12:45:32     LEVTYPE    = SFC,
+2024-09-10 12:45:32     PARAM      = 49.128/201.128/202.128,
+2024-09-10 12:45:32     TIME       = 0000,
+2024-09-10 12:45:32     STEP       = 24/48/72/96/120,
+2024-09-10 12:45:32     DOMAIN     = G,
+2024-09-10 12:45:32     TARGET     = "edte_20240820_fg-eu.grib",
+2024-09-10 12:45:32     RESOL      = AUTO,
+2024-09-10 12:45:32     AREA       = 75/-30/25/50,
+2024-09-10 12:45:32     GRID       = 0.04/0.04,
+2024-09-10 12:45:32     PADDING    = 0,
+2024-09-10 12:45:32     EXPECT     = ANY,
+2024-09-10 12:45:32     DATE       = 20240820
+2024-09-10 12:45:32 
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Web API request id: 66e03f5a3b32f0067d127513
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Requesting any number of fields (request describes 15)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Current value is 8192 (8.00 K)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Current value is 43690 (42.67 K)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Calling mars on 'marsrd-core', local port is 33278
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Server task is 543 [marsrd]
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Request cost: 15 fields, 752.785 Mbytes online, nodes: mvr006 [marsrd]
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - The efficiency of your requests in the last 12 hours is 40% [marsrd]
+2024-09-10 12:45:32 mars - INFO   - 20240910.124516 - Transfering 789352020 bytes
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 - 15 fields retrieved from 'marsrd'
+2024-09-10 12:45:32 mars - WARN   - 20240910.124527 - Visiting database marsrd : expected 0, got 15
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 - 15 fields have been interpolated
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 - Request time:  wall: 12 sec  cpu: 9 sec
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 -   Read from network: 752.78 Mbyte(s) in 3 sec  [280.98 Mbyte/sec]
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 -   Visiting marsrd: wall: 12 sec
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 -   Post-processing: wall: 9 sec cpu: 8 sec
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [689.06 Mbyte/sec]
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 - Memory used: 480.80 Mbyte(s)
+2024-09-10 12:45:32 mars - INFO   - 20240910.124527 - No errors reported
+2024-09-10 12:45:32 Process '['nice', 'mars', '/tmp/20240910-1240/eb/tmp-_mars-CFz2Wn.req']' finished
+2024-09-10 12:45:32 Request is complete
+2024-09-10 12:45:32 Transfering 71.6201 Mbytes into edte_20240820_fg-eu.grib
+2024-09-10 12:45:32 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240910-1240/1d/_mars-bol-webmars-private-svc-blue-010-d4755d5b313f7cded016e66ba0cd989b-2Hddel.grib
+2024-09-10 12:45:40 Transfer rate 8.50478 Mbytes/s
+2024-09-10 12:45:41 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+Fitting execution time per member in minutes: 2.27
+netcdf to grib for swi2
+grib fix
+start xgb predict soil temp
+Fitting execution time per member in minutes: 0.71
+netcdf to grib for stl1
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+start xgb predict snow depth
+Fitting execution time per member in minutes: 7.14
+netcdf to grib for sd
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
+2024-09-10 12:45:16 ECMWF API python library 1.6.3
+2024-09-10 12:45:16 ECMWF API at https://api.ecmwf.int/v1
+2024-09-10 12:45:16 Welcome Mikko Strahlendorff
+2024-09-10 12:45:17 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-10 12:45:17 Request submitted
+2024-09-10 12:45:17 Request id: 66e03f5d0aa4889569cb5975
+2024-09-10 12:45:17 Request is submitted
+2024-09-10 12:45:19 Request is queued
+2024-09-10 12:45:30 Request is active
+2024-09-10 13:00:57 Error contacting the WebAPI, retrying in 60 seconds ...
+2024-09-10 13:45:50 Calling 'nice mars /tmp/20240910-1240/c1/tmp-_mars-pWMFue.req'
+2024-09-10 13:45:50 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 13:45:50 mars - WARN -
+2024-09-10 13:45:50 mars - WARN -
+2024-09-10 13:45:50 MIR environment variables:
+2024-09-10 13:45:50 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 13:45:50 MIR_LSM_NAMED=1km.climate.v013
+2024-09-10 13:45:50 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Welcome to MARS
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - MARS Client build stamp: 20240618101041
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - MARS Client bundle version: 6.33.19.4
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package mars-client version: 6.33.19
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package mir version: 1.21.0
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package odc version: 1.5.0
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package fdb version: 5.12.1
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package metkit version: 1.11.12
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package eckit version: 1.26.2
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - package eccodes version: 2.35.3
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Maximum retrieval size is 75.00 G
+2024-09-10 13:45:50 retrieve,domain=g,target="edte_20240821_sfc-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,repres=sh,padding=0,step=0/to/120/by/6,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240821,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240910.124529 - Automatic split on dates is on
+2024-09-10 13:45:50 
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Processing request 1
+2024-09-10 13:45:50 
+2024-09-10 13:45:50 RETRIEVE,
+2024-09-10 13:45:50     CLASS      = RD,
+2024-09-10 13:45:50     TYPE       = FC,
+2024-09-10 13:45:50     STREAM     = OPER,
+2024-09-10 13:45:50     EXPVER     = i4ql,
+2024-09-10 13:45:50     REPRES     = SH,
+2024-09-10 13:45:50     LEVTYPE    = SFC,
+2024-09-10 13:45:50     PARAM      = 8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,
+2024-09-10 13:45:50     TIME       = 0000,
+2024-09-10 13:45:50     STEP       = 0/6/12/18/24/30/36/42/48/54/60/66/72/78/84/90/96/102/108/114/120,
+2024-09-10 13:45:50     DOMAIN     = G,
+2024-09-10 13:45:50     TARGET     = "edte_20240821_sfc-eu.grib",
+2024-09-10 13:45:50     RESOL      = AUTO,
+2024-09-10 13:45:50     AREA       = 75/-30/25/50,
+2024-09-10 13:45:50     GRID       = 0.04/0.04,
+2024-09-10 13:45:50     PADDING    = 0,
+2024-09-10 13:45:50     EXPECT     = ANY,
+2024-09-10 13:45:50     DATE       = 20240821
+2024-09-10 13:45:50 
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Web API request id: 66e03f5d0aa4889569cb5975
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Requesting any number of fields (request describes 903)
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Current value is 8192 (8.00 K)
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Current value is 43690 (42.67 K)
+2024-09-10 13:45:50 mars - INFO   - 20240910.124529 - Calling mars on 'marsrd-core', local port is 54834
+2024-09-10 13:45:50 mars - INFO   - 20240910.124530 - Server task is 426 [marsrd]
+2024-09-10 13:45:50 mars - INFO   - 20240910.124530 - Request cost: 903 fields, 5.14599 Gbytes online, 38.5579 Gbytes on 1 tape, nodes: hpss mvr000 mvr004 mvr010 mvr011, libraries: ibmlib03 [marsrd]
+2024-09-10 13:45:50 mars - INFO   - 20240910.124530 - The efficiency of your requests in the last 12 hours is 40% [marsrd]
+2024-09-10 13:45:50 mars - INFO   - 20240910.133629 - Transfering 46926663514 bytes
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 - 903 fields retrieved from 'marsrd'
+2024-09-10 13:45:50 mars - WARN   - 20240910.134357 - Visiting database marsrd : expected 0, got 903
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 - 903 fields have been interpolated
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 - Request time:  wall: 58 min 29 sec  cpu: 6 min 22 sec
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 -   Read from network: 43.70 Gbyte(s) in 1 min 41 sec  [444.58 Mbyte/sec]
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 -   Processing in marsrd: wall: 51 min
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 -   Visiting marsrd: wall: 58 min 28 sec
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 -   Post-processing: wall: 5 min 42 sec cpu: 5 min 40 sec
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 -   Writing to target file: 4.14 Gbyte(s) in 3 sec  [1.39 Gbyte/sec] cpu: 3 sec
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 - Memory used: 659.43 Mbyte(s)
+2024-09-10 13:45:50 mars - INFO   - 20240910.134357 - No errors reported
+2024-09-10 13:45:50 Process '['nice', 'mars', '/tmp/20240910-1240/c1/tmp-_mars-pWMFue.req']' finished
+2024-09-10 13:45:50 Request is complete
+2024-09-10 13:45:50 Transfering 4.14066 Gbytes into edte_20240821_sfc-eu.grib
+2024-09-10 13:45:50 From https://apps.ecmwf.int/api/streaming/private/blue/04/20240910-1240/0b/_mars-bol-webmars-private-svc-blue-010-7a527896970b09a4fc90fa37bf98d3ff-hH76qS.grib
+2024-09-10 13:48:02 Transfer rate 32.1841 Mbytes/s
+2024-09-10 13:48:03 Done
+Warning (gribapiDefParam): Can't convert GRIB2 parameter ID (19.1.0) to GRIB1, set to 19.1!
+disaccumulate 24h and shifttime
+fetch fg/24h variables
+2024-09-10 13:48:43 ECMWF API python library 1.6.3
+2024-09-10 13:48:43 ECMWF API at https://api.ecmwf.int/v1
+2024-09-10 13:48:43 Welcome Mikko Strahlendorff
+2024-09-10 13:48:44 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-10 13:48:45 Request submitted
+2024-09-10 13:48:45 Request id: 66e04e3c094c5cb0a9127715
+2024-09-10 13:48:45 Request is submitted
+2024-09-10 13:48:46 Request is active
+2024-09-10 14:04:05 Error contacting the WebAPI, retrying in 60 seconds ...
+2024-09-10 14:44:48 Error contacting the WebAPI, retrying in 60 seconds ...
+2024-09-10 15:09:57 Calling 'nice mars /tmp/20240910-1340/85/tmp-_mars-NxadHH.req'
+2024-09-10 15:09:57 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 15:09:57 mars - WARN -
+2024-09-10 15:09:57 mars - WARN -
+2024-09-10 15:09:57 MIR environment variables:
+2024-09-10 15:09:57 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-10 15:09:57 MIR_LSM_NAMED=1km.climate.v013
+2024-09-10 15:09:57 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Welcome to MARS
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - MARS Client build stamp: 20240618101041
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - MARS Client bundle version: 6.33.19.4
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package mars-client version: 6.33.19
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package mir version: 1.21.0
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package odc version: 1.5.0
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package fdb version: 5.12.1
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package metkit version: 1.11.12
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package eckit version: 1.26.2
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - package eccodes version: 2.35.3
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Maximum retrieval size is 75.00 G
+2024-09-10 15:09:57 retrieve,domain=g,target="edte_20240821_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240821,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240910.134846 - Automatic split on dates is on
+2024-09-10 15:09:57 
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Processing request 1
+2024-09-10 15:09:57 
+2024-09-10 15:09:57 RETRIEVE,
+2024-09-10 15:09:57     CLASS      = RD,
+2024-09-10 15:09:57     TYPE       = FC,
+2024-09-10 15:09:57     STREAM     = OPER,
+2024-09-10 15:09:57     EXPVER     = i4ql,
+2024-09-10 15:09:57     REPRES     = SH,
+2024-09-10 15:09:57     LEVTYPE    = SFC,
+2024-09-10 15:09:57     PARAM      = 49.128/201.128/202.128,
+2024-09-10 15:09:57     TIME       = 0000,
+2024-09-10 15:09:57     STEP       = 24/48/72/96/120,
+2024-09-10 15:09:57     DOMAIN     = G,
+2024-09-10 15:09:57     TARGET     = "edte_20240821_fg-eu.grib",
+2024-09-10 15:09:57     RESOL      = AUTO,
+2024-09-10 15:09:57     AREA       = 75/-30/25/50,
+2024-09-10 15:09:57     GRID       = 0.04/0.04,
+2024-09-10 15:09:57     PADDING    = 0,
+2024-09-10 15:09:57     EXPECT     = ANY,
+2024-09-10 15:09:57     DATE       = 20240821
+2024-09-10 15:09:57 
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Web API request id: 66e04e3c094c5cb0a9127715
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Requesting any number of fields (request describes 15)
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Current value is 8192 (8.00 K)
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Current value is 43690 (42.67 K)
+2024-09-10 15:09:57 mars - INFO   - 20240910.134846 - Calling mars on 'marsrd-core', local port is 55516
+2024-09-10 15:09:57 mars - INFO   - 20240910.143401 - Server task is 415 [marsrd]
+2024-09-10 15:09:57 mars - INFO   - 20240910.143401 - Request cost: 15 fields, 752.785 Mbytes on 1 tape, nodes: hpss, libraries: ibmlib03 [marsrd]
+2024-09-10 15:09:57 mars - INFO   - 20240910.143401 - The efficiency of your requests in the last 12 hours is 38% [marsrd]
+2024-09-10 15:09:57 mars - INFO   - 20240910.150812 - Transfering 789352020 bytes
+2024-09-10 15:09:57 mars - INFO   - 20240910.150825 - 15 fields retrieved from 'marsrd'
+2024-09-10 15:09:57 mars - WARN   - 20240910.150825 - Visiting database marsrd : expected 0, got 15
+2024-09-10 15:09:57 mars - INFO   - 20240910.150825 - 15 fields have been interpolated
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 - Request time:  wall: 1 hour 19 min 40 sec  cpu: 10 sec
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 -   Read from network: 752.78 Mbyte(s) in 3 sec  [252.75 Mbyte/sec]
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 -   Processing in marsrd: wall: 1 hour 19 min 26 sec
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 -   Visiting marsrd: wall: 1 hour 19 min 40 sec
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 -   Post-processing: wall: 11 sec cpu: 9 sec
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [208.14 Mbyte/sec]
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 - Memory used: 480.80 Mbyte(s)
+2024-09-10 15:09:57 mars - INFO   - 20240910.150826 - No errors reported
+2024-09-10 15:09:57 Process '['nice', 'mars', '/tmp/20240910-1340/85/tmp-_mars-NxadHH.req']' finished
+2024-09-10 15:09:57 Request is complete
+2024-09-10 15:09:57 Transfering 71.6201 Mbytes into edte_20240821_fg-eu.grib
+2024-09-10 15:09:57 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240910-1340/7f/_mars-bol-webmars-private-svc-blue-004-d4755d5b313f7cded016e66ba0cd989b-wE4FlP.grib
+2024-09-10 15:10:08 Transfer rate 6.54905 Mbytes/s
+2024-09-10 15:10:08 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+Fitting execution time per member in minutes: 1.49
+netcdf to grib for swi2
+grib fix
+start xgb predict soil temp
+Fitting execution time per member in minutes: 0.70
+2024-09-10 15:15:16,281 - distributed.worker - ERROR - Failed to communicate with scheduler during heartbeat.
+Traceback (most recent call last):
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/comm/tcp.py", line 225, in read
+    frames_nosplit_nbytes_bin = await stream.read_bytes(fmt_size)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/worker.py", line 1252, in heartbeat
+    response = await retry_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/utils_comm.py", line 455, in retry_operation
+    return await retry(
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/utils_comm.py", line 434, in retry
+    return await coro()
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/core.py", line 1394, in send_recv_from_rpc
+    return await send_recv(comm=comm, op=key, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/core.py", line 1153, in send_recv
+    response = await comm.read(deserializers=deserializers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/comm/tcp.py", line 237, in read
+    convert_stream_closed_error(self, e)
+  File "/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/comm/tcp.py", line 142, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) ConnectionPool.heartbeat_worker local=tcp://127.0.0.1:46630 remote=tcp://127.0.0.1:38371>: Stream is closed
+netcdf to grib for stl1
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+start xgb predict snow depth
+Fitting execution time per member in minutes: 3.69
+netcdf to grib for sd
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
+fetch 3h variables
+2024-09-11 06:05:41 ECMWF API python library 1.6.3
+2024-09-11 06:05:41 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 06:05:42 Welcome Mikko Strahlendorff
+2024-09-11 06:05:43 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 06:05:43 Request submitted
+2024-09-11 06:05:43 Request id: 66e13337f2d08d9e2512888a
+2024-09-11 06:05:43 Request is submitted
+2024-09-11 06:05:44 Request is active
+2024-09-11 06:38:12 Calling 'nice mars /tmp/20240911-0600/12/tmp-_mars-_1Zhd9.req'
+2024-09-11 06:38:12 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 06:38:12 mars - WARN -
+2024-09-11 06:38:12 mars - WARN -
+2024-09-11 06:38:12 MIR environment variables:
+2024-09-11 06:38:12 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 06:38:12 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 06:38:12 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Welcome to MARS
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - MARS Client build stamp: 20240618101041
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - MARS Client bundle version: 6.33.19.4
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package mars-client version: 6.33.19
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package mir version: 1.21.0
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package odc version: 1.5.0
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package fdb version: 5.12.1
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package metkit version: 1.11.12
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package eckit version: 1.26.2
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - package eccodes version: 2.35.3
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Maximum retrieval size is 75.00 G
+2024-09-11 06:38:12 retrieve,domain=g,target="edte_20240822_sfc-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,repres=sh,padding=0,step=0/to/120/by/6,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240822,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.060544 - Automatic split on dates is on
+2024-09-11 06:38:12 
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Processing request 1
+2024-09-11 06:38:12 
+2024-09-11 06:38:12 RETRIEVE,
+2024-09-11 06:38:12     CLASS      = RD,
+2024-09-11 06:38:12     TYPE       = FC,
+2024-09-11 06:38:12     STREAM     = OPER,
+2024-09-11 06:38:12     EXPVER     = i4ql,
+2024-09-11 06:38:12     REPRES     = SH,
+2024-09-11 06:38:12     LEVTYPE    = SFC,
+2024-09-11 06:38:12     PARAM      = 8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,
+2024-09-11 06:38:12     TIME       = 0000,
+2024-09-11 06:38:12     STEP       = 0/6/12/18/24/30/36/42/48/54/60/66/72/78/84/90/96/102/108/114/120,
+2024-09-11 06:38:12     DOMAIN     = G,
+2024-09-11 06:38:12     TARGET     = "edte_20240822_sfc-eu.grib",
+2024-09-11 06:38:12     RESOL      = AUTO,
+2024-09-11 06:38:12     AREA       = 75/-30/25/50,
+2024-09-11 06:38:12     GRID       = 0.04/0.04,
+2024-09-11 06:38:12     PADDING    = 0,
+2024-09-11 06:38:12     EXPECT     = ANY,
+2024-09-11 06:38:12     DATE       = 20240822
+2024-09-11 06:38:12 
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Web API request id: 66e13337f2d08d9e2512888a
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Requesting any number of fields (request describes 903)
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Current value is 8192 (8.00 K)
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Current value is 43690 (42.67 K)
+2024-09-11 06:38:12 mars - INFO   - 20240911.060544 - Calling mars on 'marsrd-core', local port is 53613
+2024-09-11 06:38:12 mars - INFO   - 20240911.060607 - Server task is 200 [marsrd]
+2024-09-11 06:38:12 mars - INFO   - 20240911.060607 - Request cost: 903 fields, 6.7633 Gbytes online, 36.9347 Gbytes on 1 tape, nodes: hpss mvr004 mvr012 mvr014, libraries: ibmlib03 [marsrd]
+2024-09-11 06:38:12 mars - INFO   - 20240911.060607 - The efficiency of your requests in the last 12 hours is 100% [marsrd]
+2024-09-11 06:38:12 mars - INFO   - 20240911.063045 - Transfering 46920368126 bytes
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 - 903 fields retrieved from 'marsrd'
+2024-09-11 06:38:12 mars - WARN   - 20240911.063803 - Visiting database marsrd : expected 0, got 903
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 - 903 fields have been interpolated
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 - Request time:  wall: 32 min 19 sec  cpu: 6 min 22 sec
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 -   Read from network: 43.70 Gbyte(s) in 1 min 32 sec  [488.78 Mbyte/sec]
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 -   Processing in marsrd: wall: 25 min
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 -   Visiting marsrd: wall: 32 min 19 sec
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 -   Post-processing: wall: 5 min 41 sec cpu: 5 min 38 sec
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 -   Writing to target file: 4.14 Gbyte(s) in 3 sec  [1.46 Gbyte/sec] cpu: 3 sec
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 - Memory used: 659.44 Mbyte(s)
+2024-09-11 06:38:12 mars - INFO   - 20240911.063803 - No errors reported
+2024-09-11 06:38:12 Process '['nice', 'mars', '/tmp/20240911-0600/12/tmp-_mars-_1Zhd9.req']' finished
+2024-09-11 06:38:12 Request is complete
+2024-09-11 06:38:12 Transfering 4.14051 Gbytes into edte_20240822_sfc-eu.grib
+2024-09-11 06:38:12 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240911-0600/10/_mars-bol-webmars-private-svc-blue-001-d4755d5b313f7cded016e66ba0cd989b-1qozPL.grib
+2024-09-11 06:40:39 Transfer rate 28.8839 Mbytes/s
+2024-09-11 06:40:39 Done
+Warning (gribapiDefParam): Can't convert GRIB2 parameter ID (19.1.0) to GRIB1, set to 19.1!
+disaccumulate 24h and shifttime
+fetch fg/24h variables
+2024-09-11 06:41:12 ECMWF API python library 1.6.3
+2024-09-11 06:41:12 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 06:41:12 Welcome Mikko Strahlendorff
+2024-09-11 06:41:13 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 06:41:13 Request submitted
+2024-09-11 06:41:13 Request id: 66e13b89f341bb57b2c97e83
+2024-09-11 06:41:13 Request is submitted
+2024-09-11 06:41:15 Request is queued
+2024-09-11 07:09:48 Request is active
+2024-09-11 07:18:34 Calling 'nice mars /tmp/20240911-0700/e0/tmp-_mars-gPU9ZE.req'
+2024-09-11 07:18:34 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 07:18:34 mars - WARN -
+2024-09-11 07:18:34 mars - WARN -
+2024-09-11 07:18:34 MIR environment variables:
+2024-09-11 07:18:34 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 07:18:34 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 07:18:34 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Welcome to MARS
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - MARS Client build stamp: 20240618101041
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - MARS Client bundle version: 6.33.19.4
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package mars-client version: 6.33.19
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package mir version: 1.21.0
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package odc version: 1.5.0
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package fdb version: 5.12.1
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package metkit version: 1.11.12
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package eckit version: 1.26.2
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - package eccodes version: 2.35.3
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Maximum retrieval size is 75.00 G
+2024-09-11 07:18:34 retrieve,domain=g,target="edte_20240822_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240822,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.070942 - Automatic split on dates is on
+2024-09-11 07:18:34 
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Processing request 1
+2024-09-11 07:18:34 
+2024-09-11 07:18:34 RETRIEVE,
+2024-09-11 07:18:34     CLASS      = RD,
+2024-09-11 07:18:34     TYPE       = FC,
+2024-09-11 07:18:34     STREAM     = OPER,
+2024-09-11 07:18:34     EXPVER     = i4ql,
+2024-09-11 07:18:34     REPRES     = SH,
+2024-09-11 07:18:34     LEVTYPE    = SFC,
+2024-09-11 07:18:34     PARAM      = 49.128/201.128/202.128,
+2024-09-11 07:18:34     TIME       = 0000,
+2024-09-11 07:18:34     STEP       = 24/48/72/96/120,
+2024-09-11 07:18:34     DOMAIN     = G,
+2024-09-11 07:18:34     TARGET     = "edte_20240822_fg-eu.grib",
+2024-09-11 07:18:34     RESOL      = AUTO,
+2024-09-11 07:18:34     AREA       = 75/-30/25/50,
+2024-09-11 07:18:34     GRID       = 0.04/0.04,
+2024-09-11 07:18:34     PADDING    = 0,
+2024-09-11 07:18:34     EXPECT     = ANY,
+2024-09-11 07:18:34     DATE       = 20240822
+2024-09-11 07:18:34 
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Web API request id: 66e13b89f341bb57b2c97e83
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Requesting any number of fields (request describes 15)
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Current value is 8192 (8.00 K)
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Current value is 43690 (42.67 K)
+2024-09-11 07:18:34 mars - INFO   - 20240911.070942 - Calling mars on 'marsrd-core', local port is 40130
+2024-09-11 07:18:34 mars - INFO   - 20240911.071248 - Server task is 688 [marsrd]
+2024-09-11 07:18:34 mars - INFO   - 20240911.071248 - Request cost: 15 fields, 752.785 Mbytes on 1 tape, nodes: hpss, libraries: ibmlib03 [marsrd]
+2024-09-11 07:18:34 mars - INFO   - 20240911.071248 - The efficiency of your requests in the last 12 hours is 50% [marsrd]
+2024-09-11 07:18:34 mars - INFO   - 20240911.071800 - Transfering 789352020 bytes
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 - 15 fields retrieved from 'marsrd'
+2024-09-11 07:18:34 mars - WARN   - 20240911.071812 - Visiting database marsrd : expected 0, got 15
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 - 15 fields have been interpolated
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 - Request time:  wall: 8 min 30 sec  cpu: 9 sec
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 -   Read from network: 752.78 Mbyte(s) in 2 sec  [358.44 Mbyte/sec]
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 -   Processing in marsrd: wall: 8 min 19 sec
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 -   Visiting marsrd: wall: 8 min 30 sec
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 -   Post-processing: wall: 9 sec cpu: 8 sec
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [703.33 Mbyte/sec]
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 - Memory used: 480.80 Mbyte(s)
+2024-09-11 07:18:34 mars - INFO   - 20240911.071812 - No errors reported
+2024-09-11 07:18:34 Process '['nice', 'mars', '/tmp/20240911-0700/e0/tmp-_mars-gPU9ZE.req']' finished
+2024-09-11 07:18:34 Request is complete
+2024-09-11 07:18:34 Transfering 71.6201 Mbytes into edte_20240822_fg-eu.grib
+2024-09-11 07:18:34 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240911-0700/97/_mars-bol-webmars-private-svc-blue-004-d4755d5b313f7cded016e66ba0cd989b-IWYped.grib
+2024-09-11 07:18:41 Transfer rate 10.7557 Mbytes/s
+2024-09-11 07:18:42 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+Fitting execution time per member in minutes: 1.95
+netcdf to grib for swi2
+grib fix
+start xgb predict soil temp
+Fitting execution time per member in minutes: 0.72
+netcdf to grib for stl1
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+start xgb predict snow depth
+Fitting execution time per member in minutes: 3.67
+netcdf to grib for sd
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
+fetch 3h variables
+fetch 3h variables
+fetch 3h variables
+2024-09-11 13:19:42 ECMWF API python library 1.6.3
+2024-09-11 13:19:42 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 13:19:43 Welcome Mikko Strahlendorff
+2024-09-11 13:19:44 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 13:19:44 Request submitted
+2024-09-11 13:19:44 Request id: 66e198f01e55bc9fd6127948
+2024-09-11 13:19:44 Request is submitted
+2024-09-11 13:19:46 Request is active
+2024-09-11 13:48:12 Calling 'nice mars /tmp/20240911-1310/a1/tmp-_mars-jIwsgD.req'
+2024-09-11 13:48:12 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 13:48:12 mars - WARN -
+2024-09-11 13:48:12 mars - WARN -
+2024-09-11 13:48:12 MIR environment variables:
+2024-09-11 13:48:12 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 13:48:12 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 13:48:12 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Welcome to MARS
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - MARS Client build stamp: 20240618101041
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - MARS Client bundle version: 6.33.19.4
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package mars-client version: 6.33.19
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package mir version: 1.21.0
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package odc version: 1.5.0
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package fdb version: 5.12.1
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package metkit version: 1.11.12
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package eckit version: 1.26.2
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - package eccodes version: 2.35.3
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Maximum retrieval size is 75.00 G
+2024-09-11 13:48:12 retrieve,domain=g,target="edte_20240826_sfc-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,repres=sh,padding=0,step=0/to/120/by/6,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240826,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.131951 - Automatic split on dates is on
+2024-09-11 13:48:12 
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Processing request 1
+2024-09-11 13:48:12 
+2024-09-11 13:48:12 RETRIEVE,
+2024-09-11 13:48:12     CLASS      = RD,
+2024-09-11 13:48:12     TYPE       = FC,
+2024-09-11 13:48:12     STREAM     = OPER,
+2024-09-11 13:48:12     EXPVER     = i4ql,
+2024-09-11 13:48:12     REPRES     = SH,
+2024-09-11 13:48:12     LEVTYPE    = SFC,
+2024-09-11 13:48:12     PARAM      = 8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,
+2024-09-11 13:48:12     TIME       = 0000,
+2024-09-11 13:48:12     STEP       = 0/6/12/18/24/30/36/42/48/54/60/66/72/78/84/90/96/102/108/114/120,
+2024-09-11 13:48:12     DOMAIN     = G,
+2024-09-11 13:48:12     TARGET     = "edte_20240826_sfc-eu.grib",
+2024-09-11 13:48:12     RESOL      = AUTO,
+2024-09-11 13:48:12     AREA       = 75/-30/25/50,
+2024-09-11 13:48:12     GRID       = 0.04/0.04,
+2024-09-11 13:48:12     PADDING    = 0,
+2024-09-11 13:48:12     EXPECT     = ANY,
+2024-09-11 13:48:12     DATE       = 20240826
+2024-09-11 13:48:12 
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Web API request id: 66e198f01e55bc9fd6127948
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Requesting any number of fields (request describes 903)
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Current value is 8192 (8.00 K)
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Current value is 43690 (42.67 K)
+2024-09-11 13:48:12 mars - INFO   - 20240911.131951 - Calling mars on 'marsrd-core', local port is 47094
+2024-09-11 13:48:12 mars - INFO   - 20240911.131952 - Server task is 343 [marsrd]
+2024-09-11 13:48:12 mars - INFO   - 20240911.131952 - Request cost: 903 fields, 6.7633 Gbytes online, 36.9001 Gbytes on 1 tape, nodes: hpss mvr004 mvr005 mvr013 mvr014, libraries: ibmlib03 [marsrd]
+2024-09-11 13:48:12 mars - INFO   - 20240911.131952 - The efficiency of your requests in the last 12 hours is 33% [marsrd]
+2024-09-11 13:48:12 mars - INFO   - 20240911.134010 - Transfering 46883166337 bytes
+2024-09-11 13:48:12 mars - INFO   - 20240911.134721 - 903 fields retrieved from 'marsrd'
+2024-09-11 13:48:12 mars - WARN   - 20240911.134721 - Visiting database marsrd : expected 0, got 903
+2024-09-11 13:48:12 mars - INFO   - 20240911.134721 - 903 fields have been interpolated
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 - Request time:  wall: 27 min 31 sec  cpu: 6 min 25 sec
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 -   Read from network: 43.66 Gbyte(s) in 1 min 22 sec  [543.97 Mbyte/sec]
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 -   Processing in marsrd: wall: 20 min 19 sec
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 -   Visiting marsrd: wall: 27 min 31 sec
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 -   Post-processing: wall: 5 min 44 sec cpu: 5 min 41 sec
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 -   Writing to target file: 4.14 Gbyte(s) in 3 sec  [1.37 Gbyte/sec] cpu: 3 sec
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 - Memory used: 659.44 Mbyte(s)
+2024-09-11 13:48:12 mars - INFO   - 20240911.134722 - No errors reported
+2024-09-11 13:48:12 Process '['nice', 'mars', '/tmp/20240911-1310/a1/tmp-_mars-jIwsgD.req']' finished
+2024-09-11 13:48:12 Request is complete
+2024-09-11 13:48:12 Transfering 4.13982 Gbytes into edte_20240826_sfc-eu.grib
+2024-09-11 13:48:12 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240911-1310/19/_mars-bol-webmars-private-svc-blue-009-d4755d5b313f7cded016e66ba0cd989b-Qd6euH.grib
+2024-09-11 13:50:37 Transfer rate 29.2801 Mbytes/s
+2024-09-11 13:50:37 Done
+Warning (gribapiDefParam): Can't convert GRIB2 parameter ID (19.1.0) to GRIB1, set to 19.1!
+disaccumulate 24h and shifttime
+fetch fg/24h variables
+2024-09-11 13:20:11 ECMWF API python library 1.6.3
+2024-09-11 13:20:11 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 13:20:11 Welcome Mikko Strahlendorff
+2024-09-11 13:20:12 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 13:20:13 Request submitted
+2024-09-11 13:20:13 Request id: 66e1990db245c74151c9852c
+2024-09-11 13:20:13 Request is submitted
+2024-09-11 13:20:14 Request is queued
+2024-09-11 13:48:41 Request is active
+2024-09-11 14:55:19 Calling 'nice mars /tmp/20240911-1340/0e/tmp-_mars-qrvVuo.req'
+2024-09-11 14:55:19 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 14:55:19 mars - WARN -
+2024-09-11 14:55:19 mars - WARN -
+2024-09-11 14:55:19 MIR environment variables:
+2024-09-11 14:55:19 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 14:55:19 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 14:55:19 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Welcome to MARS
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - MARS Client build stamp: 20240618101041
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - MARS Client bundle version: 6.33.19.4
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package mars-client version: 6.33.19
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package mir version: 1.21.0
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package odc version: 1.5.0
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package fdb version: 5.12.1
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package metkit version: 1.11.12
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package eckit version: 1.26.2
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - package eccodes version: 2.35.3
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Maximum retrieval size is 75.00 G
+2024-09-11 14:55:19 retrieve,domain=g,target="edte_20240827_sfc-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,repres=sh,padding=0,step=0/to/120/by/6,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240827,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.134723 - Automatic split on dates is on
+2024-09-11 14:55:19 
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Processing request 1
+2024-09-11 14:55:19 
+2024-09-11 14:55:19 RETRIEVE,
+2024-09-11 14:55:19     CLASS      = RD,
+2024-09-11 14:55:19     TYPE       = FC,
+2024-09-11 14:55:19     STREAM     = OPER,
+2024-09-11 14:55:19     EXPVER     = i4ql,
+2024-09-11 14:55:19     REPRES     = SH,
+2024-09-11 14:55:19     LEVTYPE    = SFC,
+2024-09-11 14:55:19     PARAM      = 8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,
+2024-09-11 14:55:19     TIME       = 0000,
+2024-09-11 14:55:19     STEP       = 0/6/12/18/24/30/36/42/48/54/60/66/72/78/84/90/96/102/108/114/120,
+2024-09-11 14:55:19     DOMAIN     = G,
+2024-09-11 14:55:19     TARGET     = "edte_20240827_sfc-eu.grib",
+2024-09-11 14:55:19     RESOL      = AUTO,
+2024-09-11 14:55:19     AREA       = 75/-30/25/50,
+2024-09-11 14:55:19     GRID       = 0.04/0.04,
+2024-09-11 14:55:19     PADDING    = 0,
+2024-09-11 14:55:19     EXPECT     = ANY,
+2024-09-11 14:55:19     DATE       = 20240827
+2024-09-11 14:55:19 
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Web API request id: 66e1990db245c74151c9852c
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Requesting any number of fields (request describes 903)
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Current value is 8192 (8.00 K)
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Current value is 43690 (42.67 K)
+2024-09-11 14:55:19 mars - INFO   - 20240911.134723 - Calling mars on 'marsrd-core', local port is 60037
+2024-09-11 14:55:19 mars - INFO   - 20240911.140148 - Server task is 613 [marsrd]
+2024-09-11 14:55:19 mars - INFO   - 20240911.140148 - Request cost: 903 fields, 6.7633 Gbytes online, 36.9025 Gbytes on 1 tape, nodes: hpss mvr005 mvr010 mvr013, libraries: ibmlib03 [marsrd]
+2024-09-11 14:55:19 mars - INFO   - 20240911.140148 - The efficiency of your requests in the last 12 hours is 36% [marsrd]
+2024-09-11 14:55:19 mars - INFO   - 20240911.144611 - Transfering 46885837670 bytes
+2024-09-11 14:55:19 mars - INFO   - 20240911.145427 - 903 fields retrieved from 'marsrd'
+2024-09-11 14:55:19 mars - WARN   - 20240911.145427 - Visiting database marsrd : expected 0, got 903
+2024-09-11 14:55:19 mars - INFO   - 20240911.145427 - 903 fields have been interpolated
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 - Request time:  wall: 1 hour 7 min 5 sec  cpu: 7 min 22 sec
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 -   Read from network: 43.67 Gbyte(s) in 1 min 33 sec  [479.96 Mbyte/sec]
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 -   Processing in marsrd: wall: 58 min 48 sec
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 -   Visiting marsrd: wall: 1 hour 7 min 5 sec
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 -   Post-processing: wall: 6 min 37 sec cpu: 6 min 34 sec
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 -   Writing to target file: 4.14 Gbyte(s) in 3 sec  [1.21 Gbyte/sec] cpu: 3 sec
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 - Memory used: 659.44 Mbyte(s)
+2024-09-11 14:55:19 mars - INFO   - 20240911.145428 - No errors reported
+2024-09-11 14:55:19 Process '['nice', 'mars', '/tmp/20240911-1340/0e/tmp-_mars-qrvVuo.req']' finished
+2024-09-11 14:55:19 Request is complete
+2024-09-11 14:55:19 Transfering 4.14152 Gbytes into edte_20240827_sfc-eu.grib
+2024-09-11 14:55:19 From https://apps.ecmwf.int/api/streaming/private/blue/02/20240911-1340/c3/_mars-bol-webmars-private-svc-blue-000-4a73a881a8d5eead47db9eff2f9935a4-ePiRyL.grib
+2024-09-11 14:57:54 Transfer rate 27.3251 Mbytes/s
+2024-09-11 14:57:54 Done
+Warning (gribapiDefParam): Can't convert GRIB2 parameter ID (19.1.0) to GRIB1, set to 19.1!
+disaccumulate 24h and shifttime
+fetch fg/24h variables
+2024-09-11 13:20:15 ECMWF API python library 1.6.3
+2024-09-11 13:20:15 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 13:20:15 Welcome Mikko Strahlendorff
+2024-09-11 13:20:16 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 13:20:16 Request submitted
+2024-09-11 13:20:16 Request id: 66e19910ecdc512505c97ef8
+2024-09-11 13:20:16 Request is submitted
+2024-09-11 13:20:18 Request is queued
+2024-09-11 14:55:05 Request is active
+2024-09-11 15:40:46 Calling 'nice mars /tmp/20240911-1450/44/tmp-_mars-m6H9zO.req'
+2024-09-11 15:40:46 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 15:40:46 mars - WARN -
+2024-09-11 15:40:46 mars - WARN -
+2024-09-11 15:40:46 MIR environment variables:
+2024-09-11 15:40:46 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 15:40:46 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 15:40:46 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Welcome to MARS
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - MARS Client build stamp: 20240618101041
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - MARS Client bundle version: 6.33.19.4
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package mars-client version: 6.33.19
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package mir version: 1.21.0
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package odc version: 1.5.0
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package fdb version: 5.12.1
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package metkit version: 1.11.12
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package eckit version: 1.26.2
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - package eccodes version: 2.35.3
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Maximum retrieval size is 75.00 G
+2024-09-11 15:40:46 retrieve,domain=g,target="edte_20240828_sfc-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,repres=sh,padding=0,step=0/to/120/by/6,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240828,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.145429 - Automatic split on dates is on
+2024-09-11 15:40:46 
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Processing request 1
+2024-09-11 15:40:46 
+2024-09-11 15:40:46 RETRIEVE,
+2024-09-11 15:40:46     CLASS      = RD,
+2024-09-11 15:40:46     TYPE       = FC,
+2024-09-11 15:40:46     STREAM     = OPER,
+2024-09-11 15:40:46     EXPVER     = i4ql,
+2024-09-11 15:40:46     REPRES     = SH,
+2024-09-11 15:40:46     LEVTYPE    = SFC,
+2024-09-11 15:40:46     PARAM      = 8.128/9.128/32.128/33.128/34.128/39.128/40.128/41.128/42.128/44.128/45.128/58.128/129.128/139.128/141.128/144.128/146.128/147.128/151.128/164.128/165.128/166.128/167.128/168.128/169.128/170.128/175.128/176.128/177.128/178.128/179.128/182.128/183.128/189.128/205.128/228.128/235.128/236.128/238.128/243.128/251.228/260015/260121,
+2024-09-11 15:40:46     TIME       = 0000,
+2024-09-11 15:40:46     STEP       = 0/6/12/18/24/30/36/42/48/54/60/66/72/78/84/90/96/102/108/114/120,
+2024-09-11 15:40:46     DOMAIN     = G,
+2024-09-11 15:40:46     TARGET     = "edte_20240828_sfc-eu.grib",
+2024-09-11 15:40:46     RESOL      = AUTO,
+2024-09-11 15:40:46     AREA       = 75/-30/25/50,
+2024-09-11 15:40:46     GRID       = 0.04/0.04,
+2024-09-11 15:40:46     PADDING    = 0,
+2024-09-11 15:40:46     EXPECT     = ANY,
+2024-09-11 15:40:46     DATE       = 20240828
+2024-09-11 15:40:46 
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Web API request id: 66e19910ecdc512505c97ef8
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Requesting any number of fields (request describes 903)
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Current value is 8192 (8.00 K)
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Current value is 43690 (42.67 K)
+2024-09-11 15:40:46 mars - INFO   - 20240911.145429 - Calling mars on 'marsrd-core', local port is 39327
+2024-09-11 15:40:46 mars - INFO   - 20240911.145431 - Server task is 165 [marsrd]
+2024-09-11 15:40:46 mars - INFO   - 20240911.145431 - Request cost: 903 fields, 4.31283 Gbytes online, 39.3625 Gbytes on 1 tape, nodes: hpss mvr000, libraries: ibmlib03 [marsrd]
+2024-09-11 15:40:46 mars - INFO   - 20240911.145431 - The efficiency of your requests in the last 12 hours is 36% [marsrd]
+2024-09-11 15:40:46 mars - INFO   - 20240911.152914 - Transfering 46895988329 bytes
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 - 903 fields retrieved from 'marsrd'
+2024-09-11 15:40:46 mars - WARN   - 20240911.153852 - Visiting database marsrd : expected 0, got 903
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 - 903 fields have been interpolated
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 - Request time:  wall: 44 min 23 sec  cpu: 6 min 59 sec
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 -   Read from network: 43.68 Gbyte(s) in 3 min 25 sec  [218.66 Mbyte/sec]
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 -   Processing in marsrd: wall: 34 min 46 sec
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 -   Visiting marsrd: wall: 44 min 23 sec
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 -   Post-processing: wall: 6 min 7 sec cpu: 6 min 4 sec
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 -   Writing to target file: 4.14 Gbyte(s) in 3 sec  [1.40 Gbyte/sec] cpu: 3 sec
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 - Memory used: 659.44 Mbyte(s)
+2024-09-11 15:40:46 mars - INFO   - 20240911.153852 - No errors reported
+2024-09-11 15:40:46 Process '['nice', 'mars', '/tmp/20240911-1450/44/tmp-_mars-m6H9zO.req']' finished
+2024-09-11 15:40:46 Request is complete
+2024-09-11 15:40:46 Transfering 4.14358 Gbytes into edte_20240828_sfc-eu.grib
+2024-09-11 15:40:46 From https://apps.ecmwf.int/api/streaming/private/blue/03/20240911-1450/b8/_mars-bol-webmars-private-svc-blue-008-d4755d5b313f7cded016e66ba0cd989b-R9t8Fm.grib
+2024-09-11 15:44:46 Transfer rate 17.6958 Mbytes/s
+2024-09-11 15:44:47 Done
+Warning (gribapiDefParam): Can't convert GRIB2 parameter ID (19.1.0) to GRIB1, set to 19.1!
+disaccumulate 24h and shifttime
+fetch fg/24h variables
+2024-09-11 13:51:23 ECMWF API python library 1.6.3
+2024-09-11 13:51:23 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 13:51:24 Welcome Mikko Strahlendorff
+2024-09-11 13:51:25 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 13:51:25 Request submitted
+2024-09-11 13:51:25 Request id: 66e1a05d2c3a9a1079cb5aa4
+2024-09-11 13:51:25 Request is submitted
+2024-09-11 13:51:26 Request is queued
+2024-09-11 15:40:08 Request is active
+2024-09-11 16:15:47 Calling 'nice mars /tmp/20240911-1530/12/tmp-_mars-EsGMBR.req'
+2024-09-11 16:15:47 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:15:47 mars - WARN -
+2024-09-11 16:15:47 mars - WARN -
+2024-09-11 16:15:47 MIR environment variables:
+2024-09-11 16:15:47 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:15:47 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 16:15:47 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Welcome to MARS
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - MARS Client build stamp: 20240618101041
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - MARS Client bundle version: 6.33.19.4
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package mars-client version: 6.33.19
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package mir version: 1.21.0
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package odc version: 1.5.0
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package fdb version: 5.12.1
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package metkit version: 1.11.12
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package eckit version: 1.26.2
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - package eccodes version: 2.35.3
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Maximum retrieval size is 75.00 G
+2024-09-11 16:15:47 retrieve,domain=g,target="edte_20240826_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240826,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.153853 - Automatic split on dates is on
+2024-09-11 16:15:47 
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Processing request 1
+2024-09-11 16:15:47 
+2024-09-11 16:15:47 RETRIEVE,
+2024-09-11 16:15:47     CLASS      = RD,
+2024-09-11 16:15:47     TYPE       = FC,
+2024-09-11 16:15:47     STREAM     = OPER,
+2024-09-11 16:15:47     EXPVER     = i4ql,
+2024-09-11 16:15:47     REPRES     = SH,
+2024-09-11 16:15:47     LEVTYPE    = SFC,
+2024-09-11 16:15:47     PARAM      = 49.128/201.128/202.128,
+2024-09-11 16:15:47     TIME       = 0000,
+2024-09-11 16:15:47     STEP       = 24/48/72/96/120,
+2024-09-11 16:15:47     DOMAIN     = G,
+2024-09-11 16:15:47     TARGET     = "edte_20240826_fg-eu.grib",
+2024-09-11 16:15:47     RESOL      = AUTO,
+2024-09-11 16:15:47     AREA       = 75/-30/25/50,
+2024-09-11 16:15:47     GRID       = 0.04/0.04,
+2024-09-11 16:15:47     PADDING    = 0,
+2024-09-11 16:15:47     EXPECT     = ANY,
+2024-09-11 16:15:47     DATE       = 20240826
+2024-09-11 16:15:47 
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Web API request id: 66e1a05d2c3a9a1079cb5aa4
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Requesting any number of fields (request describes 15)
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Current value is 8192 (8.00 K)
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Current value is 43690 (42.67 K)
+2024-09-11 16:15:47 mars - INFO   - 20240911.153853 - Calling mars on 'marsrd-core', local port is 57075
+2024-09-11 16:15:47 mars - INFO   - 20240911.153854 - Server task is 847 [marsrd]
+2024-09-11 16:15:47 mars - INFO   - 20240911.153854 - Request cost: 15 fields, 752.785 Mbytes on 1 tape, nodes: hpss, libraries: ibmlib03 [marsrd]
+2024-09-11 16:15:47 mars - INFO   - 20240911.153854 - The efficiency of your requests in the last 12 hours is 38% [marsrd]
+2024-09-11 16:15:47 mars - INFO   - 20240911.161400 - Transfering 789352020 bytes
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 - 15 fields retrieved from 'marsrd'
+2024-09-11 16:15:47 mars - WARN   - 20240911.161410 - Visiting database marsrd : expected 0, got 15
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 - 15 fields have been interpolated
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 - Request time:  wall: 35 min 17 sec  cpu: 8 sec
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 -   Read from network: 752.78 Mbyte(s) in 1 sec  [511.52 Mbyte/sec]
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 -   Processing in marsrd: wall: 35 min 7 sec
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 -   Visiting marsrd: wall: 35 min 17 sec
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 -   Post-processing: wall: 8 sec cpu: 8 sec
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [358.31 Mbyte/sec]
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 - Memory used: 480.81 Mbyte(s)
+2024-09-11 16:15:47 mars - INFO   - 20240911.161410 - No errors reported
+2024-09-11 16:15:47 Process '['nice', 'mars', '/tmp/20240911-1530/12/tmp-_mars-EsGMBR.req']' finished
+2024-09-11 16:15:47 Request is complete
+2024-09-11 16:15:47 Transfering 71.6201 Mbytes into edte_20240826_fg-eu.grib
+2024-09-11 16:15:47 From https://apps.ecmwf.int/api/streaming/private/blue/02/20240911-1530/7e/_mars-bol-webmars-private-svc-blue-006-4a73a881a8d5eead47db9eff2f9935a4-DcqKup.grib
+2024-09-11 16:15:56 Transfer rate 7.59866 Mbytes/s
+2024-09-11 16:15:57 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+2024-09-11 14:58:38 ECMWF API python library 1.6.3
+2024-09-11 14:58:38 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 14:58:38 Welcome Mikko Strahlendorff
+2024-09-11 14:58:39 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 14:58:40 Request submitted
+2024-09-11 14:58:40 Request id: 66e1b02037bfcfbeadf12c27
+2024-09-11 14:58:40 Request is submitted
+2024-09-11 14:58:41 Request is queued
+2024-09-11 16:15:37 Request is active
+2024-09-11 16:21:47 Calling 'nice mars /tmp/20240911-1610/14/tmp-_mars-Vkhm2h.req'
+2024-09-11 16:21:47 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:21:47 mars - WARN -
+2024-09-11 16:21:47 mars - WARN -
+2024-09-11 16:21:47 MIR environment variables:
+2024-09-11 16:21:47 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:21:47 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 16:21:47 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Welcome to MARS
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - MARS Client build stamp: 20240618101041
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - MARS Client bundle version: 6.33.19.4
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package mars-client version: 6.33.19
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package mir version: 1.21.0
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package odc version: 1.5.0
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package fdb version: 5.12.1
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package metkit version: 1.11.12
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package eckit version: 1.26.2
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - package eccodes version: 2.35.3
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Maximum retrieval size is 75.00 G
+2024-09-11 16:21:47 retrieve,domain=g,target="edte_20240827_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240827,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.161411 - Automatic split on dates is on
+2024-09-11 16:21:47 
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Processing request 1
+2024-09-11 16:21:47 
+2024-09-11 16:21:47 RETRIEVE,
+2024-09-11 16:21:47     CLASS      = RD,
+2024-09-11 16:21:47     TYPE       = FC,
+2024-09-11 16:21:47     STREAM     = OPER,
+2024-09-11 16:21:47     EXPVER     = i4ql,
+2024-09-11 16:21:47     REPRES     = SH,
+2024-09-11 16:21:47     LEVTYPE    = SFC,
+2024-09-11 16:21:47     PARAM      = 49.128/201.128/202.128,
+2024-09-11 16:21:47     TIME       = 0000,
+2024-09-11 16:21:47     STEP       = 24/48/72/96/120,
+2024-09-11 16:21:47     DOMAIN     = G,
+2024-09-11 16:21:47     TARGET     = "edte_20240827_fg-eu.grib",
+2024-09-11 16:21:47     RESOL      = AUTO,
+2024-09-11 16:21:47     AREA       = 75/-30/25/50,
+2024-09-11 16:21:47     GRID       = 0.04/0.04,
+2024-09-11 16:21:47     PADDING    = 0,
+2024-09-11 16:21:47     EXPECT     = ANY,
+2024-09-11 16:21:47     DATE       = 20240827
+2024-09-11 16:21:47 
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Web API request id: 66e1b02037bfcfbeadf12c27
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Requesting any number of fields (request describes 15)
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Current value is 8192 (8.00 K)
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Current value is 43690 (42.67 K)
+2024-09-11 16:21:47 mars - INFO   - 20240911.161411 - Calling mars on 'marsrd-core', local port is 39156
+2024-09-11 16:21:47 mars - INFO   - 20240911.161415 - Server task is 263 [marsrd]
+2024-09-11 16:21:47 mars - INFO   - 20240911.161415 - Request cost: 15 fields, 752.785 Mbytes on 1 tape, nodes: hpss, libraries: ibmlib03 [marsrd]
+2024-09-11 16:21:47 mars - INFO   - 20240911.161415 - The efficiency of your requests in the last 12 hours is 39% [marsrd]
+2024-09-11 16:21:47 mars - INFO   - 20240911.162119 - Transfering 789352020 bytes
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 - 15 fields retrieved from 'marsrd'
+2024-09-11 16:21:47 mars - WARN   - 20240911.162131 - Visiting database marsrd : expected 0, got 15
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 - 15 fields have been interpolated
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 - Request time:  wall: 7 min 20 sec  cpu: 10 sec
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 -   Read from network: 752.78 Mbyte(s) in 3 sec  [247.96 Mbyte/sec]
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 -   Processing in marsrd: wall: 7 min 7 sec
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 -   Visiting marsrd: wall: 7 min 20 sec
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 -   Post-processing: wall: 9 sec cpu: 9 sec
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [294.32 Mbyte/sec]
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 - Memory used: 480.80 Mbyte(s)
+2024-09-11 16:21:47 mars - INFO   - 20240911.162131 - No errors reported
+2024-09-11 16:21:47 Process '['nice', 'mars', '/tmp/20240911-1610/14/tmp-_mars-Vkhm2h.req']' finished
+2024-09-11 16:21:47 Request is complete
+2024-09-11 16:21:47 Transfering 71.6201 Mbytes into edte_20240827_fg-eu.grib
+2024-09-11 16:21:47 From https://apps.ecmwf.int/api/streaming/private/blue/04/20240911-1610/20/_mars-bol-webmars-private-svc-blue-004-7a527896970b09a4fc90fa37bf98d3ff-GWL1dB.grib
+2024-09-11 16:21:56 Transfer rate 7.98021 Mbytes/s
+2024-09-11 16:21:56 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 38033 instead
+  warnings.warn(
+Fitting execution time per member in minutes: 3.87
+Fitting execution time per member in minutes: 3.93
+netcdf to grib for swi2
+netcdf to grib for swi2
+grib fix
+grib fix
+start xgb predict soil temp
+start xgb predict soil temp
+/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 33565 instead
+  warnings.warn(
+Fitting execution time per member in minutes: 1.04
+Fitting execution time per member in minutes: 1.05
+netcdf to grib for stl1
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+netcdf to grib for stl1
+start xgb predict snow depth
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+start xgb predict snow depth
+/home/ubuntu/mambaforge/envs/xgb/lib/python3.11/site-packages/distributed/node.py:182: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 46207 instead
+  warnings.warn(
+2024-09-11 15:45:29 ECMWF API python library 1.6.3
+2024-09-11 15:45:29 ECMWF API at https://api.ecmwf.int/v1
+2024-09-11 15:45:29 Welcome Mikko Strahlendorff
+2024-09-11 15:45:30 In case of problems, please check https://confluence.ecmwf.int/display/WEBAPI/Web+API+FAQ or contact servicedesk@ecmwf.int
+2024-09-11 15:45:30 Request submitted
+2024-09-11 15:45:30 Request id: 66e1bb1a4a00fd0d9df12cc1
+2024-09-11 15:45:30 Request is submitted
+2024-09-11 15:45:32 Request is queued
+2024-09-11 16:21:59 Request is active
+2024-09-11 16:38:25 Calling 'nice mars /tmp/20240911-1620/28/tmp-_mars-jYggYT.req'
+2024-09-11 16:38:25 Forcing MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:38:25 mars - WARN -
+2024-09-11 16:38:25 mars - WARN -
+2024-09-11 16:38:25 MIR environment variables:
+2024-09-11 16:38:25 MIR_CACHE_PATH=/data/ec_coeff
+2024-09-11 16:38:25 MIR_LSM_NAMED=1km.climate.v013
+2024-09-11 16:38:25 Using MARS binary: /usr/local/apps/mars/versions/6.33.19.4/bin/mars.bin
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - Welcome to MARS
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - MARS Client build stamp: 20240618101041
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - MARS Client bundle version: 6.33.19.4
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package mars-client version: 6.33.19
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package mir version: 1.21.0
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package odc version: 1.5.0
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package fdb version: 5.12.1
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package metkit version: 1.11.12
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package eckit version: 1.26.2
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - package eccodes version: 2.35.3
+2024-09-11 16:38:25 mars - INFO   - 20240911.162132 - Maximum retrieval size is 75.00 G
+2024-09-11 16:38:25 retrieve,domain=g,target="edte_20240828_fg-eu.grib",stream=oper,area=75/-30/25/50,levtype=sfc,param=49.128/201.128/202.128,repres=sh,padding=0,step=24/to/120/by/24,grid=0.04/0.04,expver=i4ql,time=00:00:00,date=20240828,resol=auto,type=fc,class=rd,expect=anymars - INFO   - 20240911.162133 - Automatic split on dates is on
+2024-09-11 16:38:25 
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Processing request 1
+2024-09-11 16:38:25 
+2024-09-11 16:38:25 RETRIEVE,
+2024-09-11 16:38:25     CLASS      = RD,
+2024-09-11 16:38:25     TYPE       = FC,
+2024-09-11 16:38:25     STREAM     = OPER,
+2024-09-11 16:38:25     EXPVER     = i4ql,
+2024-09-11 16:38:25     REPRES     = SH,
+2024-09-11 16:38:25     LEVTYPE    = SFC,
+2024-09-11 16:38:25     PARAM      = 49.128/201.128/202.128,
+2024-09-11 16:38:25     TIME       = 0000,
+2024-09-11 16:38:25     STEP       = 24/48/72/96/120,
+2024-09-11 16:38:25     DOMAIN     = G,
+2024-09-11 16:38:25     TARGET     = "edte_20240828_fg-eu.grib",
+2024-09-11 16:38:25     RESOL      = AUTO,
+2024-09-11 16:38:25     AREA       = 75/-30/25/50,
+2024-09-11 16:38:25     GRID       = 0.04/0.04,
+2024-09-11 16:38:25     PADDING    = 0,
+2024-09-11 16:38:25     EXPECT     = ANY,
+2024-09-11 16:38:25     DATE       = 20240828
+2024-09-11 16:38:25 
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Web API request id: 66e1bb1a4a00fd0d9df12cc1
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Requesting any number of fields (request describes 15)
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Setting SO_SNDBUF to 33554432 (32.00 M)
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Current value is 8192 (8.00 K)
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Setting SO_RCVBUF to 33554432 (32.00 M)
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Current value is 43690 (42.67 K)
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Calling mars on 'marsrd-core', local port is 58288
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Server task is 7 [marsrd]
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - Request cost: 15 fields, 752.785 Mbytes on 1 tape, nodes: hpss, libraries: ibmlib03 [marsrd]
+2024-09-11 16:38:25 mars - INFO   - 20240911.162133 - The efficiency of your requests in the last 12 hours is 39% [marsrd]
+2024-09-11 16:38:25 mars - INFO   - 20240911.163810 - Transfering 789352020 bytes
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 - 15 fields retrieved from 'marsrd'
+2024-09-11 16:38:25 mars - WARN   - 20240911.163821 - Visiting database marsrd : expected 0, got 15
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 - 15 fields have been interpolated
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 - Request time:  wall: 16 min 48 sec  cpu: 9 sec
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 -   Read from network: 752.78 Mbyte(s) in 2 sec  [355.82 Mbyte/sec]
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 -   Processing in marsrd: wall: 16 min 37 sec
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 -   Visiting marsrd: wall: 16 min 48 sec
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 -   Post-processing: wall: 9 sec cpu: 9 sec
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 -   Writing to target file: 71.62 Mbyte(s) in < 1 sec [356.57 Mbyte/sec]
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 - Memory used: 480.80 Mbyte(s)
+2024-09-11 16:38:25 mars - INFO   - 20240911.163821 - No errors reported
+2024-09-11 16:38:25 Process '['nice', 'mars', '/tmp/20240911-1620/28/tmp-_mars-jYggYT.req']' finished
+2024-09-11 16:38:25 Request is complete
+2024-09-11 16:38:25 Transfering 71.6201 Mbytes into edte_20240828_fg-eu.grib
+2024-09-11 16:38:25 From https://apps.ecmwf.int/api/streaming/private/blue/01/20240911-1620/2e/_mars-bol-webmars-private-svc-blue-005-0d255c279e874ad03d66f5487aef1007-gcO0nz.grib
+2024-09-11 16:38:33 Transfer rate 8.69536 Mbytes/s
+2024-09-11 16:38:33 Done
+calculate/remap runsums
+remap swvls
+remap sl00
+remap stl2
+shift climate dates
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+cdo(2) mergetime (Warning): Input streams have different parameter names!
+Fitting execution time per member in minutes: 13.09
+Fitting execution time per member in minutes: 13.10
+2024-09-11 16:49:06,891 - distributed.nanny - WARNING - Worker process still alive after 3.1999981689453127 seconds, killing
+2024-09-11 16:49:06,892 - distributed.nanny - WARNING - Worker process still alive after 3.1999995422363288 seconds, killing
+2024-09-11 16:49:06,892 - distributed.nanny - WARNING - Worker process still alive after 3.199999694824219 seconds, killing
+2024-09-11 16:49:06,893 - distributed.nanny - WARNING - Worker process still alive after 3.1999995422363288 seconds, killing
+2024-09-11 16:49:06,893 - distributed.nanny - WARNING - Worker process still alive after 3.199997711181641 seconds, killing
+2024-09-11 16:49:06,894 - distributed.nanny - WARNING - Worker process still alive after 3.1999992370605472 seconds, killing
+2024-09-11 16:49:06,894 - distributed.nanny - WARNING - Worker process still alive after 3.199999389648438 seconds, killing
+2024-09-11 16:49:06,895 - distributed.nanny - WARNING - Worker process still alive after 3.199999389648438 seconds, killing
+2024-09-11 16:49:06,895 - distributed.nanny - WARNING - Worker process still alive after 3.199999389648438 seconds, killing
+2024-09-11 16:49:06,895 - distributed.nanny - WARNING - Worker process still alive after 3.1999992370605472 seconds, killing
+2024-09-11 16:49:06,911 - distributed.nanny - WARNING - Worker process still alive after 3.1999989318847657 seconds, killing
+2024-09-11 16:49:06,911 - distributed.nanny - WARNING - Worker process still alive after 3.1999989318847657 seconds, killing
+2024-09-11 16:49:06,926 - distributed.nanny - WARNING - Worker process still alive after 3.199997711181641 seconds, killing
+2024-09-11 16:49:06,926 - distributed.nanny - WARNING - Worker process still alive after 3.1999987792968754 seconds, killing
+2024-09-11 16:49:06,927 - distributed.nanny - WARNING - Worker process still alive after 3.1999990844726565 seconds, killing
+2024-09-11 16:49:06,927 - distributed.nanny - WARNING - Worker process still alive after 3.1999990844726565 seconds, killing
+netcdf to grib for sd
+netcdf to grib for sd
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+cdo(2) mergetime: Use CDO option --sortname to sort the parameter by name (NetCDF only)!
+start xgb predict soil wetness
+Fitting execution time per member in minutes: 2.04
+netcdf to grib for swi2
+grib fix
+start xgb predict soil temp
+Fitting execution time per member in minutes: 0.71
+netcdf to grib for stl1
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "unknown" ("clim_ts_value").
+grib fix
+start xgb predict snow depth
+Fitting execution time per member in minutes: 11.18
+netcdf to grib for sd
+gribapiEncode     : *** GRIB2 shortName does not correspond to chosen variable name: "sde" ("sd").
+grib fix
