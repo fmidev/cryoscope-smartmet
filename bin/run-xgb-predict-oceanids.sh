@@ -24,14 +24,14 @@ echo $predictors00 $predictorsDSUM
 
 # Instantaneous parameters at 00 UTC (10u,10v,2d,2t,10fg) to ERA5 grid, and fitting grid points
 [ -s ens/ec-sf_${year}${month}_all-24h-eu-50.grib ] && ! [ -s ens/ec-sf_${year}${month}_inst-${harbor}-50.grib ] && \
-seq 0 50 | parallel cdo -b P12 -O --eccodes sellonlatbox,$bbox -remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -selname,$predictors00 ens/ec-sf_${year}${month}_all-24h-eu-{}.grib ens/ec-sf_${year}${month}_inst-${harbor}-{}.grib
+seq 0 1 | parallel cdo -b P12 -O --eccodes sellonlatbox,$bbox -remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -selname,$predictors00 ens/ec-sf_${year}${month}_all-24h-eu-{}.grib ens/ec-sf_${year}${month}_inst-${harbor}-{}.grib
 
 # Disaccumulated daily sums (ewss,nsss,e,slhf,sshf,ssr,ssrd,strd,tp) to ERA5 grid, and fitting grid points
 [ -s ens/disacc_${year}${month}_50.grib ] && ! [ -s ens/ec-sf_${year}${month}_dailysums-${harbor}-50.grib ] && \
-seq 0 50 | parallel cdo -b P12 -O --eccodes sellonlatbox,$bbox -remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -selname,$predictorsDSUM ens/disacc_${year}${month}_{}.grib ens/ec-sf_${year}${month}_dailysums-${harbor}-{}.grib
+seq 0 1 | parallel cdo -b P12 -O --eccodes sellonlatbox,$bbox -remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -selname,$predictorsDSUM ens/disacc_${year}${month}_{}.grib ens/ec-sf_${year}${month}_dailysums-${harbor}-{}.grib
 
 # XGBoost prediction (ouput is XGBoost SF timeseries as a csv file for harbor point location for each ens member)
-seq 0 50 | parallel python /home/ubuntu/bin/xgb-predict-oceanids.py ens/ec-sf_${year}${month}_inst-${harbor}-{}.grib ens/ec-sf_${year}${month}_dailysums-${harbor}-{}.grib OCEANIDS/ECXSF_${year}${month}_${predictand}_${harbor}_${FMISID}-{}.csv {}
+seq 0 1 | parallel python /home/ubuntu/bin/xgb-predict-oceanids.py ens/ec-sf_${year}${month}_inst-${harbor}-{}.grib ens/ec-sf_${year}${month}_dailysums-${harbor}-{}.grib OCEANIDS/ECXSF_${year}${month}_${predictand}_${harbor}_${FMISID}-{}.csv {}
 
 # join csv files (keep datetime in ensmember 0)
 seq 1 50 | parallel "cut -f2 -d, OCEANIDS/ECXSF_${year}${month}_${predictand}_${harbor}_${FMISID}-{}.csv | sed 's:\(.*\),\(.*\):\2 \1:' > OCEANIDS/ECXSF_${year}${month}_${predictand}_${harbor}_${FMISID}-{}-fix.csv"

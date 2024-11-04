@@ -176,9 +176,10 @@ seq 0 50 | parallel -q cdo --eccodes -O -b P12 \
         -aexpr,'vp=clev(q)*q/(0.622+0.378*q);' ens/ec-sf_$year${month}_pl-12h-$abr-{}.grib ens/ec-sf_$year${month}_pl-pp-12h-$abr-{}.grib || \
  echo "NOT adding kx to ECSF pressure level - no input or already produced"
 
-echo "start XGBoost predict for precipitation"
-run-xgb-predict-prec.sh $year $month
+# run XGBoost model to produce precipitation forecasts
+! [ -s grib/ECXSF_$year${month}01T000000_tp-acc-$abr.grib ] && echo "start XGBoost predict for precipitation" && run-xgb-predict-prec.sh $year $month
 
+# fix grib attributes for pl-pp
 [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50.grib ] && ! [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50-fixed.grib ] && \
 seq 0 50 | parallel grib_set -r -s centre=98,setLocalDefinition=1,localDefinitionNumber=15,jScansPositively=0,totalNumber=51,number={} ens/ec-sf_$year${month}_pl-pp-12h-$abr-{}.grib \
 ens/ec-sf_$year${month}_pl-pp-12h-$abr-{}-fixed.grib || echo "NOT fixing pl-pp grib attributes - no input or already produced"
@@ -188,9 +189,9 @@ ens/ec-sf_$year${month}_pl-pp-12h-$abr-{}-fixed.grib || echo "NOT fixing pl-pp g
 grib_copy ens/ec-sf_$year${month}_pl-pp-12h-$abr-*-fixed.grib grib/ECSF_$year${month}01T000000_pl-pp-12h-$abr.grib || echo "NOT joining pl-pp ensemble members - no input or already produced"
 wait 
 
-# run xgboost model to produce swi2 forecasts
-echo 'start XGBoost predict for SWI2'
-run-xgb-predict-swi2.sh $year $month
+# run XGBoost model to produce swi2 forecasts
+! [ -s grib/ECXSF_$year${month}01T000000_swi2-24h-$abr-era5l.grib ] && echo 'start XGBoost predict for SWI2' && run-xgb-predict-swi2.sh $year $month
+
 # produce forcing file for HOPS
 # mod. M.Kosmale 18.03.2021: called now independently from cron (v3)
 #/home/smartmet/harvesterseasons-hops2smartmet/get-seasonal_hops.sh $year $month
