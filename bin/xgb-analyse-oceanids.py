@@ -5,8 +5,14 @@ import numpy as np
 import CRPS.CRPS as pscore
 import calendar
 #from Vuosaari_151028_XGBoost import *
-from Raahe_101785_XGBoost import *
+#from Raahe_101785_XGBoost import *
 #from Rauma_101061_XGBoost import *
+from Malaga_000231_XGBoost import *
+
+### Creates seasonal forecast plots against observations for wind gusts. 
+### The script takes a wind speed threshold as a command line argument and calculates the percentage of ensemble members exceeding the threshold for each month.
+### The script also calculates the CRPS for each ensemble member and the observations and plots the results.
+
 pd.set_option('mode.chained_assignment', None) # turn off SettingWithCopyWarning 
 
 # give wind threshold k as cmd argument
@@ -56,7 +62,7 @@ value1=round(df_max['wind>'+str(k)+'_%'].mean(),1)
 
 df_xgb=df_xgb.drop(columns=['ensspread'])
 colorsdict={
-            'WG_PT1H_MAX0':'blue','WG_PT1H_MAX1':'blue','WG_PT1H_MAX2':'blue','WG_PT1H_MAX3':'blue','WG_PT1H_MAX4':'blue','WG_PT1H_MAX5':'blue','WG_PT1H_MAX6':'blue','WG_PT1H_MAX7':'blue','WG_PT1H_MAX8':'blue','WG_PT1H_MAX9':'blue','WG_PT1H_MAX10':'blue',
+            'WG_PT1H_MAX00':'blue','WG_PT1H_MAX01':'blue','WG_PT1H_MAX02':'blue','WG_PT1H_MAX03':'blue','WG_PT1H_MAX04':'blue','WG_PT1H_MAX05':'blue','WG_PT1H_MAX06':'blue','WG_PT1H_MAX07':'blue','WG_PT1H_MAX08':'blue','WG_PT1H_MAX09':'blue','WG_PT1H_MAX10':'blue',
             'WG_PT1H_MAX11':'blue','WG_PT1H_MAX12':'blue','WG_PT1H_MAX13':'blue','WG_PT1H_MAX14':'blue','WG_PT1H_MAX15':'blue','WG_PT1H_MAX16':'blue','WG_PT1H_MAX17':'blue','WG_PT1H_MAX18':'blue','WG_PT1H_MAX19':'blue','WG_PT1H_MAX20':'blue',
             'WG_PT1H_MAX21':'blue','WG_PT1H_MAX22':'blue','WG_PT1H_MAX23':'blue','WG_PT1H_MAX24':'blue','WG_PT1H_MAX25':'blue','WG_PT1H_MAX26':'blue','WG_PT1H_MAX27':'blue','WG_PT1H_MAX28':'blue','WG_PT1H_MAX29':'blue','WG_PT1H_MAX30':'blue',
             'WG_PT1H_MAX31':'blue','WG_PT1H_MAX32':'blue','WG_PT1H_MAX33':'blue','WG_PT1H_MAX34':'blue','WG_PT1H_MAX35':'blue','WG_PT1H_MAX36':'blue','WG_PT1H_MAX37':'blue','WG_PT1H_MAX38':'blue','WG_PT1H_MAX39':'blue','WG_PT1H_MAX40':'blue',

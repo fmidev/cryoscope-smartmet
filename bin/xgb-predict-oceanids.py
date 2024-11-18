@@ -2,9 +2,6 @@ import xarray as xr
 import cfgrib,time,sys
 import pandas as pd
 import xgboost as xgb
-#from Vuosaari_151028_XGBoost import *
-#from Raahe_101785_XGBoost import *
-from Rauma_101061_XGBoost import *
 
 #startTime=time.time()
 
@@ -26,10 +23,16 @@ instant = sys.argv[1] # ecsf 00 UTC data
 dailysums = sys.argv[2] # ecsf disaccumulated data
 outFile = sys.argv[3] # output csv filename
 ensmem = sys.argv[4] # ensemble member
+pred00=sys.argv[5].split(',') # list of predictors at 00 UTC
+predDSUM = sys.argv[6].split(',') # list of predictors daily sums
+cols_own = sys.argv[7].split(',') # list of col order
+mdl_name = sys.argv[8]
+predictand = sys.argv[9]
 
 # 00 UTC
 sl=xr.open_dataset(instant, engine='cfgrib', 
                     backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath=''))
+#print(sl)
 df_00=sl.to_dataframe()
 df_00.reset_index(['latitude','longitude'],inplace=True)
 df_00=df_00.drop(columns=['surface'])
@@ -63,19 +66,27 @@ df4=filter_points(df_DSUM,lat4,lon4,4,predDSUM)
 
 # merge dataframes
 df_new2 = pd.concat([df1,df2,df3,df4],axis=1,sort=False).reset_index()
-df_new2 = df_new2.drop(['valid_time','lat-1','lon-1','lat-2','lon-2','lat-3','lon-3','lat-4','lon-4'], axis=1)
+#df_new2 = df_new2.drop(['valid_time','lat-1','lon-1','lat-2','lon-2','lat-3','lon-3','lat-4','lon-4'], axis=1)
  
 # merge 00 utc and dsums
 df_fin= pd.concat([df_new1,df_new2],axis=1,sort=False).reset_index()
 if 'index' in df_fin.columns:
     df_fin=df_fin.drop(columns=['index'])
-df_fin=df_fin[cols_own] # check that column order same as in fitting
+df_fin.rename(columns={'tclw-1': 'tlwc-1','tclw-2': 'tlwc-2','tclw-3': 'tlwc-3','tclw-4': 'tlwc-4'}, inplace=True)
+#df_fin=df_fin[cols_own] # check that column order same as in fitting
+#print(df_fin.columns)
+
 
 # XGBoost predict
 fitted_mdl=xgb.XGBRegressor()
 fitted_mdl.load_model(mod_dir+mdl_name)
+# Ensure the DataFrame has the correct columns
+required_columns = fitted_mdl.get_booster().feature_names
+df_fin = df_fin[required_columns]
+#print(df_fin)
+# Make the prediction
 result=fitted_mdl.predict(df_fin)
-if ensmem<10:
+if int(ensmem)<10:
     ensname=predictand+'0'+ensmem
 else:
     ensname=predictand+ensmem

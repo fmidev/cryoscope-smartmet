@@ -27,7 +27,8 @@ c.retrieve(
             'surface_latent_heat_flux', 'surface_net_solar_radiation', 'surface_net_thermal_radiation',
             'surface_sensible_heat_flux', 'surface_solar_radiation_downwards', 'surface_thermal_radiation_downwards',
             'top_net_solar_radiation', 'top_net_thermal_radiation', 'total_cloud_cover',
-            'total_precipitation'
+            'total_precipitation',"land_sea_mask","total_column_cloud_liquid_water",
+            "total_column_water_vapour"
         ],
         'area' : area,
         'year': year,

@@ -4,7 +4,8 @@ import pandas as pd
 import xgboost as xgb
 #from Vuosaari_151028_XGBoost import *
 #from Raahe_101785_XGBoost import *
-from Rauma_101061_XGBoost import *
+#from Rauma_101061_XGBoost import *
+from Malaga_000231_XGBoost import *
 
 #startTime=time.time()
 
