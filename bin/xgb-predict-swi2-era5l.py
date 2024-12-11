@@ -16,11 +16,12 @@ if __name__ == "__main__":
         # input files 
         swvls_ecsf=sys.argv[1] # vsw (swvl layers)
         sl00_ecsf=sys.argv[2] # d2m,t2m,rsn,sde,stl1
-        sl_runsum=sys.argv[3] # 15-day runnins sums for disaccumulated tp,e,ro
-        sl_disacc=sys.argv[4] # disaccumulated tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf 
-        laihv=sys.argv[5]
-        lailv=sys.argv[6]
-        swi2c=sys.argv[7] # swi2clim
+        #sl_runsum=sys.argv[3] # 15-day runnins sums for disaccumulated tp,e,ro DISCARDED for future use
+        sl_disacc=sys.argv[3] # disaccumulated tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf 
+        laihv=sys.argv[4]
+        lailv=sys.argv[5]
+        swi2c=sys.argv[6] # swi2clim
+        outfile=sys.argv[7] # output file
         dtm_aspect='grib/COPERNICUS_20000101T000000_20110701_anor-dtm-aspect-avg_eu-era5l.grib' 
         dtm_slope='grib/COPERNICUS_20000101T000000_20110701_slor-dtm-slope-avg_eu-era5l.grib'
         dtm_height='grib/COPERNICUS_20000101T000000_20110701_h-dtm-height-avg_eu-era5l.grib'
@@ -34,9 +35,7 @@ if __name__ == "__main__":
         soiltype='grib/ECC_20000101T000000_soiltype-eu-9km-fix.grib' # soil type
         typehv='grib/ECC_20000101T000000_hveg-type-eu-9km-fix.grib' # type of high vegetation
         typelv='grib/ECC_20000101T000000_lveg-type-eu-9km-fix.grib' # type of low vegetation 
-        # output file
-        outfile=sys.argv[8]
-
+        
         # read in data
         sl_UTC00_var = ['d2m','t2m','rsn','sde','stl1'] 
         names00UTC={'d2m':'td2-00','t2m':'t2-00','rsn':'rsn-00','sde':'sd-00','stl1':'stl1-00'}
@@ -45,8 +44,8 @@ if __name__ == "__main__":
         'clay_5-15cm','sand_5-15cm','silt_5-15cm','soc_5-15cm',
         'clay_15-30cm','sand_15-30cm','silt_15-30cm','soc_15-30cm']
         sl_disacc_var=['tp','e','slhf','sshf','ro','str','ssr','ssrd']
-        sl_runsum_var=['tp','e','ro']
-        namesRS={'tp':'tp15d','e':'evap15d','ro':'ro15d'}
+        #sl_runsum_var=['tp','e','ro']
+        #namesRS={'tp':'tp15d','e':'evap15d','ro':'ro15d'}
         namesSG5={'scfr':'clay_0-5cm','ssfr':'sand_0-5cm','soilp':'silt_0-5cm','stf':'soc_0-5cm'}
         namesSG15={'scfr':'clay_5-15cm','ssfr':'sand_5-15cm','soilp':'silt_5-15cm','stf':'soc_5-15cm'}
         namesSG30={'scfr':'clay_15-30cm','ssfr':'sand_15-30cm','soilp':'silt_15-30cm','stf':'soc_15-30cm'}
@@ -83,8 +82,8 @@ if __name__ == "__main__":
                         backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath='')).rename_vars({'cur':'urban_cover'})
         sldisacc=xr.open_dataset(sl_disacc, engine='cfgrib', chunks={'valid_time':1},
                         backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath=''))[sl_disacc_var].rename_vars({'e':'evap'})
-        slrunsum=xr.open_dataset(sl_runsum, engine='cfgrib', chunks={'valid_time':1},
-                        backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath=''))[sl_runsum_var].rename_vars(namesRS)
+        #slrunsum=xr.open_dataset(sl_runsum, engine='cfgrib', chunks={'valid_time':1},
+        #                backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath=''))[sl_runsum_var].rename_vars(namesRS)
         laihv_ds=xr.open_dataset(laihv, engine='cfgrib', chunks={'valid_time':1},
                         backend_kwargs=dict(time_dims=('valid_time','verifying_time'),indexpath='')).rename_vars({'lai_hv':'laihv-00'})
         lailv_ds=xr.open_dataset(lailv, engine='cfgrib', chunks={'valid_time':1},
@@ -103,7 +102,8 @@ if __name__ == "__main__":
         soilg_ds30=soilg_ds.where((soilg_ds.depthBelowLand<=0.40) & (soilg_ds.depthBelowLand>=0.20), drop=True).rename_vars(namesSG30).squeeze(["depthBelowLand"], drop=True) # use layers 0-30cm for swvl2
         ds1=xr.merge([swvls,sl00,height,slope,aspect,soilg_ds5,soilg_ds15,soilg_ds30,
                       lakecov_ds,hvc_ds,hlc_ds,lakedepth_ds,landcov_ds,soilty_ds,tvh_ds,tvl_ds,ecc_ucov,
-                      sldisacc,slrunsum,laihv_ds,lailv_ds,swi2clim
+                      sldisacc,#slrunsum,
+                      laihv_ds,lailv_ds,swi2clim
                       ],compat='override')
         ds1=ds1.drop_vars(['number','surface','depthBelowLandLayer'])
         ds1=ds1.sel(valid_time=slice(date_first,date_last))
@@ -113,31 +113,40 @@ if __name__ == "__main__":
         #df=ds1.to_dask_dataframe()[preds] #dask
         #print(df)
         df=df.reset_index() # pandas
+        df.rename(columns={'latitude': 'TH_LAT', 'longitude': 'TH_LONG'}, inplace=True)
+        print(df)
         
         # store grid for final result
-        df_grid=df[['valid_time','latitude','longitude']]
+        df_grid=df[['valid_time','TH_LAT','TH_LONG']]
         df_grid['swi2'] = np.nan
-        df_grid=df_grid.set_index(['valid_time', 'latitude','longitude'])
+        df_grid=df_grid.set_index(['valid_time', 'TH_LAT','TH_LONG'])
         
         df=df.dropna()
-        preds=['evap','evap15d','laihv-00','lailv-00','ro','ro15d','rsn-00','sd-00',
-        'slhf','sshf','ssr','ssrd','stl1-00','str','swvl2-00','t2-00','td2-00',
-        'tp','tp15d','swi2clim',
-        'lake_cover','cvh','cvl','lake_depth','land_cover','soiltype','urban_cover','tvh','tvl',
-        'latitude','longitude','DTM_height','DTM_slope','DTM_aspect',
-        'clay_0-5cm','clay_15-30cm','clay_5-15cm',
-        'sand_0-5cm','sand_15-30cm','sand_5-15cm',
-        'silt_0-5cm','silt_15-30cm','silt_5-15cm',
-        'soc_0-5cm','soc_15-30cm','soc_5-15cm',
-        'dayOfYear']
+        preds=['evap',
+               #'evap15d',
+               'laihv-00','lailv-00','ro',
+               #'ro15d',
+               'rsn-00','sd-00',
+               'slhf','sshf','ssr','ssrd','stl1-00','str','swvl2-00','t2-00','td2-00',
+               'tp',
+               #'tp15d',
+               'swi2clim',
+               'lake_cover','cvh','cvl','lake_depth','land_cover','soiltype','urban_cover','tvh','tvl',
+               'TH_LAT','TH_LONG','DTM_height','DTM_slope','DTM_aspect',
+               'clay_0-5cm','clay_15-30cm','clay_5-15cm',
+               'sand_0-5cm','sand_15-30cm','sand_5-15cm',
+               'silt_0-5cm','silt_15-30cm','silt_5-15cm',
+               'soc_0-5cm','soc_15-30cm','soc_5-15cm',
+               'dayOfYear']
         df_preds = df[preds]
-        swicols=['valid_time','latitude','longitude']
+        swicols=['valid_time','TH_LAT','TH_LONG']
         df=df[swicols]
         
         #print(df.compute()) # dask
         
         ### Predict with XGBoost fitted model 
-        mdl_name='MLmodels/mdl_swi2_2015-2022_10000points-13.txt'
+        #mdl_name='MLmodels/mdl_swi2_2015-2022_10000points-13.txt'
+        mdl_name='MLmodels/mdl_swi2_2015-2022_10000points-noRunsums.txt'
         fitted_mdl=xgb.XGBRegressor() # pandas
         #fitted_mdl=xgb.Booster() # dask
         fitted_mdl.load_model(mdl_name)
@@ -150,7 +159,9 @@ if __name__ == "__main__":
 
         # result df to ds, and nc file as output
         df['swi2']=result.tolist()
-        df=df.set_index(['valid_time', 'latitude','longitude'])
+        df.rename(columns={'TH_LAT': 'latitude', 'TH_LONG': 'longitude'}, inplace=True)
+        df.set_index(['valid_time', 'latitude', 'longitude'], inplace=True)
+        #df=df.set_index(['valid_time', 'TH_LAT','TH_LONG'])
         #print(df)
         result=df_grid.fillna(df)
         #print(result)

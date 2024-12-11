@@ -40,9 +40,9 @@ echo 'fetch 3h variables'
 #  cdo -P 64 --eccodes -s -O aexprf,ec-sde.instr -remapnn,edte-$abr-grid edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
 ! [ -s grib/EDTE_${date}T000000_sfc-$abr.grib ] &&  \
  sed s:2023-10-10:$date:g ../mars/edte-sfc.mars | /home/smartmet/bin/mars && \
- cdo -P 64 --eccodes -s -O aexprf,ec-sde.instr edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
+ cdo --eccodes -s -O aexprf,ec-sde.instr edte_${date}_sfc-$abr.grib grib/EDTE_${date}T000000_sfc-$abr.grib || echo "EDTE sfc Data already downloaded"
 echo 'disaccumulate 24h and shifttime' #,swi-edte-$abr-weights.nc
-! [ -s ens/edte_${date}_disacc-$abr.grib ] && cdo -P 64 -s --eccodes -O shifttime,-1d \
+! [ -s ens/edte_${date}_disacc-$abr.grib ] && cdo -s --eccodes -O shifttime,-1d \
  -deltat -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf,skt -seltime,00:00:00 grib/EDTE_${date}T000000_sfc-$abr.grib ens/edte_${date}_disacc-$abr.grib \
  || echo "EDTE sfc Data already disaccumulated"
 

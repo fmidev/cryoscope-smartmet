@@ -23,22 +23,21 @@ else
     day=$(date -d '6 days ago' +%d)
     yyear=$(date -d '7 days ago' +%Y)
     ymonth=$(date -d '7 days ago' +%m)
-    yday=$(date -d '7 days ago' +%d)    
+    yday=$(date -d '7 days ago' +%d)
     ymond1=$year$month$day
     ymond2=$yyear$ymonth$yday
 fi
-
-source ~/.smart 
+source ~/.smart
 cd /home/smartmet/data
 echo "fetch ERA5-L for y: $year m: $month d: $day"
 [ -f grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib ] || ../bin/cds-era5l.py $year $month $day $abr $area
 conda activate cdo
 # accumulated at 00UTC
 cdo -b P8 -O --eccodes shifttime,-1day -selhour,0 -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf ERA5L_${ymond1}T000000_sfc-1h.grib ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib
-# daily means for instantaneousL_20000101T000000_
+# daily means for instantaneous ERA5L_20000101T000000_
 cdo -b P8 -O --eccodes daymean -selname,10u,10v,2d,2t,lai_hv,lai_lv,src,skt,asn,rsn,sd,stl1,stl2,stl3,stl4,sp,tsn,swvl1,swvl2,swvl3,swvl4 ERA5L_${ymond1}T000000_sfc-1h.grib ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib
 
-# append to monthly files - with parallel run use -j1 
+# append to monthly files - with parallel run use -j1
 if [ $yday -eq 01 ]
 then
     mv ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib grib/ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib
@@ -57,5 +56,26 @@ fi
 mv ERA5L_${ymond1}T000000_sfc-1h.grib grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib
 cdo -f grb2 --eccodes setparam,11.1.0 -selname,sde -aexprf,ec-sde.instr grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib grib/ERA5L_20000101T000000_$year$month${day}T000000_sde.grib
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
+
+# Check if any of the generated files are 0KB
+for file in grib/ERA5L_20000101T000000_$year$month${day}T000000_base+soil.grib \
+           grib/ERA5LD_20000101T000000_${ymond2}T000000_accumulated.grib \
+           grib/ERA5LD_20000101T000000_${ymond1}T000000_dailymeans.grib \
+           grib/ERA5L_20000101T000000_$year$month${day}T000000_sde.grib
+do
+    # check if file is empty
+    if [ -f "$file" ] && [ ! -s "$file" ] 
+    then
+        # print file that is empty
+        echo "Error: $file is 0KB"
+	echo "Removing $file"
+	rm "$file"
+        exit 1
+    else
+        # print file that is not empty
+        echo "$file is not 0KB"
+        
+    fi
+done
 
 echo "Done"
