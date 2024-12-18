@@ -105,6 +105,7 @@ if __name__ == "__main__":
                       sldisacc,#slrunsum,
                       laihv_ds,lailv_ds,swi2clim
                       ],compat='override')
+        #print(ds1)
         ds1=ds1.drop_vars(['number','surface','depthBelowLandLayer'])
         ds1=ds1.sel(valid_time=slice(date_first,date_last))
         
@@ -114,12 +115,13 @@ if __name__ == "__main__":
         #print(df)
         df=df.reset_index() # pandas
         df.rename(columns={'latitude': 'TH_LAT', 'longitude': 'TH_LONG'}, inplace=True)
-        print(df)
+        #print(df)
         
         # store grid for final result
         df_grid=df[['valid_time','TH_LAT','TH_LONG']]
+        df_grid.rename(columns={'TH_LAT': 'latitude', 'TH_LONG': 'longitude'}, inplace=True)
         df_grid['swi2'] = np.nan
-        df_grid=df_grid.set_index(['valid_time', 'TH_LAT','TH_LONG'])
+        df_grid=df_grid.set_index(['valid_time', 'latitude','longitude'])
         
         df=df.dropna()
         preds=['evap',
@@ -141,7 +143,8 @@ if __name__ == "__main__":
         df_preds = df[preds]
         swicols=['valid_time','TH_LAT','TH_LONG']
         df=df[swicols]
-        
+        #print(df)
+
         #print(df.compute()) # dask
         
         ### Predict with XGBoost fitted model 

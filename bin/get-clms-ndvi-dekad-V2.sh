@@ -48,7 +48,7 @@ then
 else
   ncea -d lat,25.0,75.0 -d lon,-30.0,50.0 $ncIn $ncfile 
   cdo -f grb2 -s -b P8 copy -setvrange,0,1 -setparam,31.0.2 -selname,NDVI $ncfile $fileFix
-  grib_set -r -s centre=224,dataDate=$yday,forecastTime=0,jScansPositively=0 $fileFix $file
+  grib_set -r -s centre=224,dataDate=$yday,forecastTime=9,jScansPositively=0 $fileFix $file
   s3cmd put -q -P --no-progress $ncIn s3://copernicus/land/gl_ndvi300m/ &&\
      s3cmd put -q -P --no-progress $file s3://copernicus/land/gl_ndvi300m_grb/ 
      #&&\

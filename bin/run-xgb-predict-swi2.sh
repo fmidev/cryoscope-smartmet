@@ -34,7 +34,9 @@ echo 'remap accumulated'
  seq 0 50 | parallel --compress cdo -b P12 -O --eccodes remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -shifttime,1day \
  -selname,e,tp,slhf,sshf,ro,str,strd,ssr,ssrd,sf ens/disacc_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}.grib \
 || echo 'not remappig disacc - already done or no input files'
-[ -s ens/disacc_${grid}_${year}${month}_50.grib ] && ! [ -s ens/disacc_${grid}_${year}${month}_50-fixed.grib ] && seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/disacc_${grid}_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}-fixed.grib || echo 'not fixing disacc - already done or no input files'
+[ -s ens/disacc_${grid}_${year}${month}_50.grib ] && ! [ -s ens/disacc_${grid}_${year}${month}_50-fixed.grib ] && \
+seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/disacc_${grid}_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}-fixed.grib \
+|| echo 'not fixing disacc - already done or no input files'
 
 ### without runsums results have no significant change so discarded
 #echo 'runsums'
