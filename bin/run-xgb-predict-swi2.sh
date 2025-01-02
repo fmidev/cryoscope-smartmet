@@ -38,7 +38,7 @@ echo 'remap accumulated'
 seq 0 50 | parallel --compress grib_set -s jScansPositively=0 ens/disacc_${grid}_${year}${month}_{}.grib ens/disacc_${grid}_${year}${month}_{}-fixed.grib \
 || echo 'not fixing disacc - already done or no input files'
 
-### without runsums results have no significant change so discarded
+### without runsums results have no significant change so discarded (12/2024)
 #echo 'runsums'
 # rolling cumsums cdo 
 #[ -s ens/disacc_${grid}_${year}${month}_50.grib ] && ! [ -s ens/ec-sf_runsums_${grid}_${year}${month}_50.grib ] && \
