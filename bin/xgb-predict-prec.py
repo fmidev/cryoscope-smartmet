@@ -64,10 +64,29 @@ rescols=['valid_time','latitude','longitude']
 df=ecsf_df.dropna()[rescols]
 ecsf_df = ecsf_df.dropna()[cols]
 
+print(ecsf_df.columns)
+columns_to_modify = ["u10", "z700", "v850", "u850", "tcc", "v10", "t850", 
+                     "z850",  "v500", "sd", "kx", "u500", "t2m", "t500", "t700", 
+                     "u700", "msl", "q500", "rsn", "q850", "q700"]
+
+# Rename columns by appending '-00' to specified columns
+ecsf_df = ecsf_df.rename(columns={col: f"{col}-00" for col in columns_to_modify})
+print(ecsf_df.columns)
+ecsf_df = ecsf_df.rename(columns={"e": "evap", "mx2t24": "mx2t-00", "mn2t24": "mn2t-00","d2m":"td2m-00"})
+
+print(ecsf_df.columns)
+print(ecsf_df)
 ### Predict with XGBoost fitted model 
-mdl_name='mdl_RRweight_5441sta_2000-2020-5.txt'
+#mdl_name='mdl_RRweight_5441sta_2000-2020-5.txt'
+#mdl_name='RR_eobs+era5_XGB_2000-2020_5441_qe.json'
+mdl_name='RR_eobs+era5_XGB_2000-2020_5441_sqe.json'
 fitted_mdl=xgb.XGBRegressor()
 fitted_mdl.load_model(mod_dir+mdl_name)
+
+required_columns = fitted_mdl.get_booster().feature_names
+ecsf_df = ecsf_df[required_columns]
+
+print(ecsf_df.columns)
 
 print('start fit')
 result=fitted_mdl.predict(ecsf_df)

@@ -32,9 +32,9 @@ seq 0 50 | parallel cdo --eccodes -O -b P12 \
     remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc -selname,10u,10v,2d,2t,msl,tcc,sd,rsn,mx2t24,mn2t24 ens/ec-sf_$year${month}_all-24h-$abr-{}.grib \
     ens/ec-sf-${grid}_$year${month}_all-24h-$abr-{}.grib || echo "NOT remap sl - no input or already produced"
 ### disacc tp,e,slhf,sshf,ro,str,strd,ssr,ssrd,sf,tsr,ttr
-#[ -f ens/disacc-$year${month}-50.grib ] && ! [ -f ens/ec-sf-${grid}_$year${month}_disacc-$abr-50.grib ] && \
+#[ -f ens/disacc_$year${month}_50.grib ] && ! [ -f ens/ec-sf-${grid}_$year${month}_disacc-$abr-50.grib ] && \
 seq 0 50 | parallel cdo --eccodes -O -b P12 \
-    remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc ens/disacc-$year${month}-{}.grib \
+    remap,$grid-$abr-grid,ec-sf-$grid-$abr-weights.nc ens/disacc_$year${month}_{}.grib \
     ens/ec-sf-${grid}_$year${month}_disacc-$abr-{}.grib || echo "NOT remap disacc - no input or already produced"
 
 # era5 orography XGB-era5-orography-200001-eu.grib

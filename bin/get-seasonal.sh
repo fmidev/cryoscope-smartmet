@@ -42,7 +42,7 @@ echo "$bsf $era y: $year m: $month ending $eyear-$emonth area: $area abr: $abr"
 ## Fetch seasonal data from CDS-API
 [ -s ec-sf-$year$month-all-24h-$abr.grib ] && echo "SF Data file already downloaded" || /home/smartmet/bin/cds-sf-all-24h.py $year $month $area $abr
 [ -s ec-sf-$year$month-pl-12h-$abr.grib ] && echo "SF pressurelevel Data already downloaded" || /home/smartmet/bin/cds-sf-pl-12h.py $year $month $area $abr
-[ -s ecsf_$year-$month-01_$abr-swvls.grib ] && echo "SF SoilLevel Data already downloaded" || sed s:2023-01-01:$year-$month-01:g ../mars/seas-swvl.mars | /home/smartmet/bin/mars
+[ -s ec-sf-$year-$month-vsw-$abr.grib ] && echo "SF SoilLevel Data already downloaded" || /home/smartmet/bin/cds-sf-vsw-24h.py $year $month $area $abr
 
 # ensure new eccodes and cdo
 #conda activate xr
@@ -50,7 +50,7 @@ echo "$bsf $era y: $year m: $month ending $eyear-$emonth area: $area abr: $abr"
 [ -s ens/ec-sf_$year${month}_all-24h-$abr-50.grib ] && echo "Ensemble member sl files ready" || \
     grib_copy ec-sf-$year$month-all-24h-$abr.grib ens/ec-sf_$year${month}_all-24h-$abr-[number].grib
 [ -s ens/ec-sf_$year${month}_swvls-24h-$abr-50.grib ] && echo "Ensemble member swvl files ready"  || \
-    grib_copy ecsf_$year-$month-01_$abr-swvls.grib ens/ec-sf_$year${month}_swvls-24h-$abr-[number].grib
+    grib_copy ec-sf-$year${month}-vsw-24h-$abr.grib ens/ec-sf_$year${month}_swvls-24h-$abr-[number].grib
 # swvls levels
 [ -s ens/ec-sf_$year${month}_swvls-24h-$abr-50-lvl-3.grib ] && echo "Levels swvls files ready" || \
 seq 0 50 | parallel grib_copy ens/ec-sf_$year${month}_swvls-24h-$abr-{}.grib ens/ec-sf_$year${month}_swvls-24h-$abr-{}-lvl-[level].grib
@@ -177,7 +177,7 @@ seq 0 50 | parallel -q cdo --eccodes -O -b P12 \
  echo "NOT adding kx to ECSF pressure level - no input or already produced"
 
 # run XGBoost model to produce precipitation forecasts
-! [ -s grib/ECXSF_$year${month}01T000000_tp-acc-$abr.grib ] && echo "start XGBoost predict for precipitation" && run-xgb-predict-prec.sh $year $month
+#! [ -s grib/ECXSF_$year${month}01T000000_tp-acc-$abr.grib ] && echo "start XGBoost predict for precipitation" && run-xgb-predict-prec.sh $year $month
 
 # fix grib attributes for pl-pp
 [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50.grib ] && ! [ -s ens/ec-sf_$year${month}_pl-pp-12h-$abr-50-fixed.grib ] && \
@@ -191,6 +191,9 @@ wait
 
 # run XGBoost model to produce swi2 forecasts
 ! [ -s grib/ECXSF_$year${month}01T000000_swi2-24h-$abr-era5l.grib ] && echo 'start XGBoost predict for SWI2' && run-xgb-predict-swi2.sh $year $month
+
+# run XGBoost model to produce harbor forecasts
+# to be added here 
 
 # produce forcing file for HOPS
 # mod. M.Kosmale 18.03.2021: called now independently from cron (v3)

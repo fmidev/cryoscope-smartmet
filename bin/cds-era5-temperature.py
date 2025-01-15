@@ -1,12 +1,16 @@
 import cdsapi
-import sys
 
-var=sys.argv[1]
-
-dataset = "reanalysis-era5-pressure-levels"
+dataset = "reanalysis-era5-single-levels"
 request = {
     "product_type": ["reanalysis"],
-    "variable": [var],
+    "variable": [
+        "2m_dewpoint_temperature",
+        "2m_temperature",
+        "sea_surface_temperature",
+        "maximum_2m_temperature_since_previous_post_processing",
+        "minimum_2m_temperature_since_previous_post_processing",
+        "skin_temperature"
+    ],
     "year": [
         "2000", "2001", "2002",
         "2003", "2004", "2005",
@@ -38,12 +42,11 @@ request = {
         "31"
     ],
     "time": ["00:00", "12:00"],
-    "pressure_level": ["500", "700", "850"],
     "data_format": "grib",
     "download_format": "unarchived",
     "area": [75, -30, 25, 50]
 }
 
 client = cdsapi.Client()
-output_filename = "/home/ubuntu/data/ERA5_20000101T000000_20241231T120000_pl_"+var+"_12h.grib"
+output_filename = '/home/ubuntu/data/ERA5_20000101T000000_20241231T120000_temperatures.grib'
 client.retrieve(dataset, request).download(output_filename)

@@ -12,6 +12,8 @@ def filter_points(df,lat,lon,nro,names):
     df0.where(filter1 & filter2, inplace=True)
     idx='-'+str(nro)
     headers=[s + idx for s in names]
+    if 'lsm' not in names:
+        df0 = df0.drop(columns=['lsm'], errors='ignore')
     df0.columns=headers
     df0=df0.dropna()
     return df0

@@ -45,6 +45,7 @@ nc_ok=$(cdo xinfon $ncfile)
 if [ -z "$nc_ok" ]
 then
     echo "Downloading failed: $ncfile $url" 
+    exit 1
 else     
     cdo --eccodes -z aec -f grb2 -s -b P8 copy -chparam,-4,40.228.192,-8,41.228.192,-14,42.228.192,-16,43.228.192 -selname,SWI_005,SWI_015,SWI_060,SWI_100 $ncfile $fileFix
     grib_set -s centre=224,jScansPositively=0 $fileFix $file

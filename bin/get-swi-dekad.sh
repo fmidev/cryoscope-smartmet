@@ -45,6 +45,7 @@ if [ -z "$nc_ok" ]
 then
     echo "Downloading failed: $ncfile $url" 
     rm $ncfile $fileFix #$meta
+    exit 1
 else 
   cdo -f grb -s -b P8 copy -chparam,-17,40.228,-20,41.228,-21,42.228,-23,43.228 -selname,SWI_005,SWI_015,SWI_060,SWI_100 $ncfile $fileFix
   grib_set -r -s centre=224,jScansPositively=0 $fileFix $file

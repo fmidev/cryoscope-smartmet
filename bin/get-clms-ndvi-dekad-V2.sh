@@ -35,20 +35,17 @@ file=${ncfile:0:-3}-NDVI-V2-eu-fix.grib
 #ceph="https://copernicus.data.lit.fmi.fi/land/gl_swi12.5km/$ncfile"
 
 #wget -q --method=HEAD $ceph && wget -q $ceph && upload=grb || 
-[ ! -s "$ncIn" ] && echo "Downloading from vito" && wget -q $url #&& \
-#     wget -q --random-wait $metaurl
-#nfile=${ncfile:0:-3}-swi_noise.tif
-#cog="${file:0:-4}_cog.tif"
-#ncog="${nfile:0:-4}_cog.tif"
+[ ! -s "$ncIn" ] && echo "Downloading from vito" && wget -q $url
 nc_ok=$(cdo xinfon $ncIn)
 
 if [ -z "$nc_ok" ]
 then
     echo "Downloading failed: $ncIn $url" 
+    exit 1
 else
   ncea -d lat,25.0,75.0 -d lon,-30.0,50.0 $ncIn $ncfile 
-  cdo -f grb2 -s -b P8 copy -setvrange,0,1 -setparam,31.0.2 -selname,NDVI $ncfile $fileFix
-  grib_set -r -s centre=224,dataDate=$yday,forecastTime=9,jScansPositively=0 $fileFix $file
+  cdo -f grb2 -s -b P8 copy -setvrange,0,1 -setparam,31.0.2 -settime,12:00:00 -selname,NDVI $ncfile $fileFix
+  grib_set -r -s centre=224,dataDate=$yday,forecastTime=0,jScansPositively=0 $fileFix $file
   s3cmd put -q -P --no-progress $ncIn s3://copernicus/land/gl_ndvi300m/ &&\
      s3cmd put -q -P --no-progress $file s3://copernicus/land/gl_ndvi300m_grb/ 
      #&&\
