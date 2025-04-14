@@ -46,13 +46,15 @@ nc_ok=$(cdo xinfon $ncfile)
 if [ -z "$nc_ok" ]
 then
     echo "Downloading failed: $ncfile $url" 
-else 
-  cdo --eccodes -f grb -s -b P8 copy -chparam,-4,40.228,-8,41.228,-14,42.228,-16,43.228 -selname,SWI_005,SWI_015,SWI_060,SWI_100 $ncfile $file && \
+    exit 1
+else     
+    cdo --eccodes -z aec -f grb2 -s -b P8 copy -chparam,-4,40.228.192,-8,41.228.192,-14,42.228.192,-16,43.228.192 -selname,SWI_005,SWI_015,SWI_060,SWI_100 $ncfile $fileFix
+    grib_set -s centre=224,jScansPositively=0 $fileFix $file
     s3cmd put -q -P --no-progress $ncfile s3://copernicus/land/eu_swi1km/ &&\
-     s3cmd put -q -P --no-progress $file s3://copernicus/land/eu_swi1km_grb/ &&\
-       s3cmd put -q -P --no-progress ${ncfile:0:-3}.xml s3://copernicus/land/eu_swi1km_meta/
-    rm $ncfile ${ncfile:0:-3}.xml
-    mv $file ../grib/SWI_${file:13:4}0101T120000_${file:13:8}T${file:21:4}_swis.grib
+     s3cmd put -q -P --no-progress $file s3://copernicus/land/eu_swi1km_grb/
+#       s3cmd put -q -P --no-progress ${ncfile:0:-3}.xml s3://copernicus/land/eu_swi1km_meta/
+#    rm $ncfile ${ncfile:0:-3}.xml $fileFix
+    mv $file ../grib/SWI_20000101T000000_${file:13:8}T${file:21:4}00_swis.grib
 fi
 #sudo docker exec smartmet-server /bin/fmi/filesys2smartmet /home/smartmet/config/libraries/tools-grid/filesys-to-smartmet.cfg 0
 
