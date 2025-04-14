@@ -15,6 +15,17 @@
 #   2 Fields used for identification
 #
 #################################################################################
+# SCFR soil clay fraction
+198007;discipline=192,centre=98,parameterCategory=128,parameterNumber=7;
+
+# SSFR soil sand fraction
+198006;discipline=192,centre=98,parameterCategory=128,parameterNumber=6;
+
+# Soilp representing the soil silt fraction
+#198008;discipline=2,centre=98,parameterCategory=3,parameterNumber=15;
+
+# Soiltexture representing the soil organic carbon fraction
+#198009;discipline=192,centre=98,parameterCategory=228,parameterNumber=92;
 
 # SWVL1;Volumetric soil water layer 1
 198039;discipline=192,centre=86,parameterCategory=128,parameterNumber=39;
@@ -86,3 +97,17 @@
 # Band 9 reflectance
 301209;discipline=3,parameterCategory=0,parameterNumber=209;
 
+# Mean total precipitation flux short=mtpf
+#235013;discipline=0,parameterCategory=1,parameterNumber=52,typeOfStatisticalProcessing=0;
+
+# 10 metre wind gust since previous post-processing (removing is_uerra=1)
+49;discipline=0,parameterCategory=2,parameterNumber=22,typeOfFirstFixedSurface=103,scaledValueOfFirstFixedSurface=10,scaleFactorOfFirstFixedSurface=0,crraLocalVersion=1;
+
+# Albedo
+174;discipline=0,parameterCategory=19,parameterNumber=1,crraLocalVersion=1;
+
+# Soil temperature layer 1 
+#174139;discipline=192,parameterCategory=174,parameterNumber=139;
+
+# Total precipitation
+228;discipline=0,parameterCategory=1,parameterNumber=193,typeOfFirstFixedSurface=1,typeOfStatisticalProcessing=1,unitsFactor=1000;

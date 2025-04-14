@@ -8,9 +8,9 @@
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:ecsf/temperature/isobands/Temperature.json",
+            "isobands": "json:ecsf/temperature/isobands/Temperature-short.json",
             "css": "ecsf/temperature/isobands/Temperature.css",
-            "parameter": "TSOIL-K:ECBSF:0:9:7:1:0",
+            "parameter": "TSOIL-C:ECBSF:::7:1:0",
             "sampling": { 
 		"relativeresolution": 4
 	    },

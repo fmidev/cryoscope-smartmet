@@ -1,0 +1,22 @@
+{
+    "title" : "SWI2",
+    "abstract" : "SWI2 Soil water index level 2.",
+    "projection": {},
+    "producer": "SWI",
+    "source":"grid",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:isobands/SWI-0TO1.json",
+            "css": "isobands/SWI-0TO1.css",
+            "parameter": "SWI2-0TO1:SWI:5059:1:0:0",
+	    "sampling": { 
+		"relativeresolution": 4
+	    },
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

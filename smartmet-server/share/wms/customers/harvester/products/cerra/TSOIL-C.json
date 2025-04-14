@@ -1,0 +1,22 @@
+{
+    "title" : "CERRA Soil Temperature",
+    "abstract" : "C3S CERRA-Land reanalysis data from ECMWF. Soil temperature at 7-28cm depth",
+    "projection": {},
+    "producer": "CERRA-L",
+    "source":"grid",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:ecsf/temperature/isobands/Temperature.json",
+            "css": "ecsf/temperature/isobands/Temperature.css",
+            "parameter": "TSOIL-C:CERRA-L:5067::2:0",
+            "sampling": { 
+		"relativeresolution": 4
+	    },
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

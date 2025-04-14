@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import sys
 import cdsapi
 
@@ -23,11 +23,11 @@ c.retrieve(
             'minimum_2m_temperature_in_the_last_24_hours', 'northward_turbulent_surface_stress', 'runoff',
             'sea_ice_cover', 'sea_surface_temperature', 'snow_density','snow_depth', 'snowfall',
             'soil_temperature_level_1','soil_temperature_level_2','soil_temperature_level_3',
-            '39.128', '40.128', '41.128','42.128', 
             'surface_latent_heat_flux', 'surface_net_solar_radiation', 'surface_net_thermal_radiation',
             'surface_sensible_heat_flux', 'surface_solar_radiation_downwards', 'surface_thermal_radiation_downwards',
             'top_net_solar_radiation', 'top_net_thermal_radiation', 'total_cloud_cover',
-            'total_precipitation'
+            'total_precipitation',"land_sea_mask","total_column_cloud_liquid_water",
+            "total_column_water_vapour"
         ],
         'area' : area,
         'year': year,

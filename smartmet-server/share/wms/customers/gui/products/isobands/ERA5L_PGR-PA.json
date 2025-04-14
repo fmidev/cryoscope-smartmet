@@ -1,0 +1,22 @@
+{
+    "title": "ERA5L Pressure On Ground Isobands (Pa)",
+    "abstract": "PGR-PA Pressure on ground (Pa) from ECMWF.",
+    "projection": {},
+    "producer": "ERA5L",
+    "source": "grid",
+    "views":[{
+	"layers": [{
+	    "qid": "l", 
+	    "layer_type": "isoband",
+	    "isobands": "json:isobands/pressure_pa.json",
+	    "css": "isobands/pressure.css",
+	    "parameter": "PGR-PA:ERA5L::1:0:1:0",
+		"sampling":{
+		"relativeresolution": 4
+	    },
+	    "attributes": {
+		"shape-rendering": "crispEdges"
+	    }
+	}]
+    }]
+}

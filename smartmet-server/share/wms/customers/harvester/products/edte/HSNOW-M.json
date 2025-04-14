@@ -1,0 +1,22 @@
+{
+    "title" : "EDTE Snow Thickness",
+    "abstract" : "Destination Earth extreme weather forecast data from ECMWF.",
+    "projection": {},
+    "producer": "EDTE",
+    "source":"grid",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:isobands/HSNOW-M.json",
+            "css": "isobands/HSNOW-M.css",
+            "parameter": "HSNOW-M:EDTE:5058:1:0:1",
+	    "sampling": { 
+		"relativeresolution": 4
+	    },
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

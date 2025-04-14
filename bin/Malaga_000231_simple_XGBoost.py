@@ -1,0 +1,13 @@
+bbox='-4.25,-4.5,36.5,36.75'
+harbor='Malaga'
+FMISID='000231'
+lat=36.66611
+lon=-4.48222
+predictand='WG_PT1H_MAX'
+mdl_name=' mdl_WG_PT1H_MAX_2010-2023_sf_Malaga_simple.txt'
+predictors00='10u,10v,2d,2t,10fg'
+predictorsDSUM='tp'
+cols_own='fg10-1','fg10-2','fg10-3','fg10-4','t2-1','t2-2','t2-3','t2-4','tp-1','tp-2','tp-3','tp-4','u10-1','u10-2','u10-3','u10-4','v10-1','v10-2','v10-3','v10-4'
+pred00='lat','lon','u10','v10','fg10','td2','t2'
+predDSUM='lat','lon','tp'
+f1='obs-oceanids-20240101T000000Z-20240803T000000Z-all-'+harbor+'-simple-daymean-daymax.csv' # observations 

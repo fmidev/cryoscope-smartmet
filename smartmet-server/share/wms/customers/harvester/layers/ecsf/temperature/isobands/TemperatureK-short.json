@@ -1,0 +1,233 @@
+[
+    {
+        "attributes": {
+            "class": "Temperature_28_30"
+        },
+        "hilimit": 303.15,
+        "lolimit": 301.15,
+        "qid": "Temperature_28_30"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_26_28"
+        },
+        "hilimit": 301.15,
+        "lolimit": 299.15,
+        "qid": "Temperature_26_28"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_24_26"
+        },
+        "hilimit": 299.15,
+        "lolimit": 297.15,
+        "qid": "Temperature_24_26"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_22_24"
+        },
+        "hilimit": 297.15,
+        "lolimit": 295.15,
+        "qid": "Temperature_22_24"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_20_22"
+        },
+        "hilimit": 295.15,
+        "lolimit": 293.15,
+        "qid": "Temperature_20_22"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_18_20"
+        },
+        "hilimit": 293.15,
+        "lolimit": 291.15,
+        "qid": "Temperature_18_20"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_16_18"
+        },
+        "hilimit": 291.15,
+        "lolimit": 289.15,
+        "qid": "Temperature_16_18"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_14_16"
+        },
+        "hilimit": 289.15,
+        "lolimit": 287.15,
+        "qid": "Temperature_14_16"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_12_14"
+        },
+        "hilimit": 287.15,
+        "lolimit": 285.15,
+        "qid": "Temperature_12_14"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_10_12"
+        },
+        "hilimit": 285.15,
+        "lolimit": 283.15,
+        "qid": "Temperature_10_12"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_8_10"
+        },
+        "hilimit": 283.15,
+        "lolimit": 281.15,
+        "qid": "Temperature_8_10"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_6_8"
+        },
+        "hilimit": 281.15,
+        "lolimit": 279.15,
+        "qid": "Temperature_6_8"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_4_6"
+        },
+        "hilimit": 279.15,
+        "lolimit": 277.15,
+        "qid": "Temperature_4_6"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_2_4"
+        },
+        "hilimit": 277.15,
+        "lolimit": 275.15,
+        "qid": "Temperature_2_4"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_1_2"
+        },
+        "hilimit": 275.15,
+        "lolimit": 274.15,
+        "qid": "Temperature_1_2"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_0_1"
+        },
+        "hilimit": 274.15,
+        "lolimit": 273.15,
+        "qid": "Temperature_0_1"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-1_0"
+        },
+        "hilimit": 273.15,
+        "lolimit": 272.15,
+        "qid": "Temperature_-1_0"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-2_-1"
+        },
+        "hilimit": 272.15,
+        "lolimit": 271.15,
+        "qid": "Temperature_-2_-1"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-3_-2"
+        },
+        "hilimit": 271.15,
+        "lolimit": 270.15,
+        "qid": "Temperature_-3_-2"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-4_-3"
+        },
+        "hilimit": 270.15,
+        "lolimit": 269.15,
+        "qid": "Temperature_-4_-3"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-5_-4"
+        },
+        "hilimit": 269.15,
+        "lolimit": 268.15,
+        "qid": "Temperature_-5_-4"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-6_-5"
+        },
+        "hilimit": 268.15,
+        "lolimit": 267.15,
+        "qid": "Temperature_-6_-5"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-8_-6"
+        },
+        "hilimit": 267.15,
+        "lolimit": 265.15,
+        "qid": "Temperature_-8_-6"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-10_-8"
+        },
+        "hilimit": 265.15,
+        "lolimit": 263.15,
+        "qid": "Temperature_-10_-8"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-12_-10"
+        },
+        "hilimit": 263.15,
+        "lolimit": 261.15,
+        "qid": "Temperature_-12_-10"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-14_-12"
+        },
+        "hilimit": 261.15,
+        "lolimit": 259.15,
+        "qid": "Temperature_-14_-12"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-16_-14"
+        },
+        "hilimit": 259.15,
+        "lolimit": 257.15,
+        "qid": "Temperature_-16_-14"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-18_-16"
+        },
+        "hilimit": 257.15,
+        "lolimit": 255.15,
+        "qid": "Temperature_-18_-16"
+    },
+    {
+        "attributes": {
+            "class": "Temperature_-20_-18"
+        },
+        "hilimit": 255.15,
+        "qid": "Temperature_-20_-18"
+    }
+]

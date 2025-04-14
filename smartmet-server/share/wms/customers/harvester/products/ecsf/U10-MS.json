@@ -1,6 +1,6 @@
 {
-    "title": "ECSF 10 Metre U Wind Component Isobands",
-    "abstract": "U10-MS 10 metre U wind component (m/s) from ECMWF.",
+    "title": "ECSF 10 Metre U Wind Component Isobands in m/s",
+    "abstract": "U10-MS 10 metre U wind component in m/s from ECSF.",
     "projection": {},
     "producer": "ECSF",
     "source": "grid",

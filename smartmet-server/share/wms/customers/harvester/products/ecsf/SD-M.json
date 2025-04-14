@@ -1,6 +1,6 @@
 {
-    "title" : "ECSF Snow Thickness",
-    "abstract" : "C3S seasonal forecast data from ECMWF.",
+    "title" : "ECSF Snow Depth in Meters",
+    "abstract" : "Snow depth in meters from ECSF.",
     "projection": {},
     "producer": "ECSF",
     "source":"grid",

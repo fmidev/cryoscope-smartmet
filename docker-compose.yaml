@@ -39,7 +39,7 @@ services:
       # Entrypoint has script to validate that database is ready
       - fminames-db
       - redis-db
-    restart: "unless-stopped" 
+    restart: "on-failure" 
     volumes:
       - ../config:/home/smartmet/config:Z
       - ../share:/home/smartmet/share:Z
@@ -65,7 +65,7 @@ services:
       dockerfile: Dockerfile
     image: fminames-db:latest
     container_name: fminames-db
-    restart: "no"
+    restart: "unless-stopped"
     environment:
       # This silly password needs to copied into ./smartmet/geonames.conf
       - POSTGRES_PASSWORD=OmaHassuSalasana1234!
@@ -97,10 +97,10 @@ services:
     restart: always
     environment:
       HSTS_HEADER: skip
-      NGINX_CLIENT_MAX_BODY_SIZE: 10m
-      UPSTREAM: 185.213.74.67:8080
-      SERVERNAME: sm.harvesterseasons.com
-      EXTRANAMES: harmonia.geoss.space
+      NGINX_CLIENT_MAX_BODY_SIZE: 100m
+      UPSTREAM: 128.214.255.90:8080
+      SERVERNAME: desm.harvesterseasons.com
+      EXTRANAMES: urban.geoss.space,baltic.geoss.space,harmonia.geoss.space
       # ,smdev.harvesterseasons.com
     ports:
       - "80:80"

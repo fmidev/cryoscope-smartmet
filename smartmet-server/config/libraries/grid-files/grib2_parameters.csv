@@ -33,9 +33,11 @@
 
 # Soil sand fraction
 6;discipline=192,parameterCategory=128,parameterNumber=6;
+198006;discipline=192,parameterCategory=128,parameterNumber=6;
 
 # Soil clay fraction
 7;discipline=192,parameterCategory=128,parameterNumber=7;
+198007;discipline=192,parameterCategory=128,parameterNumber=7;
 
 # Surface runoff
 8;discipline=192,parameterCategory=128,parameterNumber=8;
@@ -169,6 +171,7 @@
 
 # 10 metre wind gust since previous post-processing
 49;discipline=0,parameterCategory=2,parameterNumber=22,typeOfFirstFixedSurface=103,scaledValueOfFirstFixedSurface=10,scaleFactorOfFirstFixedSurface=0,typeOfStatisticalProcessing=2,is_uerra=1;
+49;discipline=0,parameterCategory=2,parameterNumber=22,typeOfFirstFixedSurface=103,scaledValueOfFirstFixedSurface=10,scaleFactorOfFirstFixedSurface=0,typeOfStatisticalProcessing=2;
 
 # Large-scale precipitation fraction
 50;discipline=192,parameterCategory=128,parameterNumber=50;
@@ -11838,6 +11841,8 @@
 
 # Lake total depth
 228007;discipline=1,parameterCategory=2,parameterNumber=0,typeOfFirstFixedSurface=1,typeOfSecondFixedSurface=162;
+228007;discipline=1,parameterCategory=2,parameterNumber=0,typeOfFirstFixedSurface=1,typeOfSecondFixedSurface=missing;
+228007;discipline=192,parameterCategory=228,parameterNumber=7;
 
 # Lake mix-layer temperature
 228008;discipline=1,parameterCategory=2,parameterNumber=1,typeOfFirstFixedSurface=166,typeOfSecondFixedSurface=missing;
@@ -12247,6 +12252,10 @@
 
 # Surface long wave-effective total cloudiness
 228255;discipline=192,parameterCategory=228,parameterNumber=255;
+
+# Urban cover fraction
+229001;discipline=2,parameterCategory=6,parameterNumber=0;
+229001;discipline=192,parameterCategory=200,parameterNumber=199;
 
 # Surface runoff (variable resolution)
 
